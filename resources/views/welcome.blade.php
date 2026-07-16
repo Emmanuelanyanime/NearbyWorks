@@ -8,12 +8,12 @@
    <!-- Place favicon.ico in the root directory -->
    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
    <!-- CSS here -->
-   <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/swiper-bundle.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/font-awesome-pro.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+   <link rel="stylesheet" href="{{ asset('asset/css/animate.css') }}">
+   <link rel="stylesheet" href="{{ asset('asset/css/nice-select.css') }}">
+   <link rel="stylesheet" href="{{ asset('asset/css/swiper-bundle.css') }}">
+   <link rel="stylesheet" href="{{ asset('asset/css/font-awesome-pro.css') }}">
+   <link rel="stylesheet" href="{{ asset('asset/css/magnific-popup.css') }}">
+   <link rel="stylesheet" href="{{ asset('asset/css/main.css') }}">
 </head>
 
 <body>
@@ -1844,17 +1844,17 @@
 
 
    <!-- JS here -->
-   <script src="js/jquery.js"></script>
-   <script src="js/plugin.js"></script>
-   <script src="js/lenis.js"></script>
-   <script src="js/springer.js"></script>
-   <script src="js/swiper-bundle.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/purecounter.js"></script>
-   <script src="js/nice-select.js"></script>
-   <script src="js/ajax-form.js"></script>
-   <script src="js/slider-init.js"></script>
-   <script src="js/main.js"></script>
+   <script src="{{ asset('asset/js/jquery.js') }}"></script>
+   <script src="{{ asset('asset/js/plugin.js') }}"></script>
+   <script src="{{ asset('asset/js/lenis.js') }}"></script>
+   <script src="{{ asset('asset/js/springer.js') }}"></script>
+   <script src="{{ asset('asset/js/swiper-bundle.js') }}"></script>
+   <script src="{{ asset('asset/js/magnific-popup.js') }}"></script>
+   <script src="{{ asset('asset/js/purecounter.js') }}"></script>
+   <script src="{{ asset('asset/js/nice-select.js') }}"></script>
+   <script src="{{ asset('asset/js/ajax-form.js') }}"></script>
+   <script src="{{ asset('asset/js/slider-init.js') }}"></script>
+   <script src="{{ asset('asset/js/main.js') }}"></script>
 
 
 
