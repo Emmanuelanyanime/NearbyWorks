@@ -145,7 +145,7 @@
                     <div class="grid grid-cols-12 gap-6 items-center">
                         <div class="xxl:col-span-3 xl:col-span-2 col-span-6">
                             <a href="index.html">
-                                <img src="images/logo-black.png" alt="">
+                                <img src="{{ asset('asset/images/logo-black.png') }}" alt="Logo">
                             </a>
                         </div>
                         <div class="xxl:col-span-6 xl:col-span-7 hidden xl:block">
@@ -165,7 +165,7 @@
                                                             <div class="xl:col-span-6 col-span-12">
                                                                 <ul
                                                                     class="[&_li]:max-xl:pl-5 xl:[&_li]:shadow-[0_1px_0_0_rgba(73,72,81,0.1)] [&_a]:block [&_a]:text-[16px] [&_a]:transition-all [&_a]:text-grey [&_a]:duration-300 [&_a]:hover:text-primary xl:[&_a]:hover:translate-x-[10px] [&_a]:py-[13px]">
-                                                                    <li><a href="about.html">About Us</a></li>
+                                                                    <li><a href="route{{  }}">About Us</a></li>
                                                                     <li><a href="career.html">Career</a></li>
                                                                     <li><a href="career-details.html">Career
                                                                             Details</a></li>

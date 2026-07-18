@@ -5,7 +5,7 @@
 
         <!-- tp-hero-area-start -->
         <div class="pt-[160px] bg-center overflow-hidden bg-no-repeat bg-grey-200 relative bg-cover"
-            data-background="assets/img/hero/home-10/bg.png">
+            data-background="{{ asset('assets/img/hero/home-10/bg.png') }}">
             <img class="absolute bottom-[-30px] left-0 right-0 m-auto" src="images/shape-4.png" alt="">
             <div class="mx-auto max-w-[1310px] px-3">
                 <div class="grid grid-cols-12 gap-3">
