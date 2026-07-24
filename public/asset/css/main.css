@@ -1,10 +1,10 @@
 /*! tailwindcss v4.2.1 | MIT License | https://tailwindcss.com */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400..700;1,400..700&family=Inter:wght@400..700&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
@@ -69,7 +69,7 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-body: "Inter", sans-serif;
-    --font-display: "Inter Display" 'sans-serif';
+    --font-display: "Instrument Serif", Georgia, serif;
     --color-primary: #6248ff;
     --color-green: #acffd3;
     --color-grey: #494851;
@@ -106,6 +106,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
+    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
   }
   a {
     color: inherit;
@@ -11036,20 +11037,6 @@
       color: rgba(255,255,255,0.6);
     }
   }
-}
-@font-face {
-  font-family: 'Inter Display';
-  src: url('../assets/fonts/InterDisplay-Medium.woff2') format('woff2'), url('../assets/fonts/InterDisplay-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Inter Display';
-  src: url('../assets/fonts/InterDisplay-SemiBold.woff2') format('woff2'), url('../assets/fonts/InterDisplay-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
 }
 @layer base {
   html, body {

@@ -1538,7 +1538,7 @@
                                                     </div>
                                                     <div class="text-center">
                                                         <span
-                                                            class="font-medium block mb-[2px] text-[20px] font-display text-black">Jan
+                                                             class="font-medium block mb-[2px] text-[20px] text-black">Jan
                                                             Mraz</span>
                                                         <span class="font-normal text-[15px] text-grey">Co-Founder
                                                             of Atheros</span>
@@ -1560,7 +1560,7 @@
                                                     </div>
                                                     <div class="text-center">
                                                         <span
-                                                            class="font-medium block mb-[2px] text-[20px] font-display text-black">Hasanbaluch</span>
+                                                             class="font-medium block mb-[2px] text-[20px] text-black">Hasanbaluch</span>
                                                         <span class="font-normal text-[15px] text-grey">Atheros</span>
                                                     </div>
                                                 </div>

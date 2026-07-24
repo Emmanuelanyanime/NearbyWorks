@@ -8,7 +8,7 @@
                     <div class="col-span-12">
                         <div class="text-center">
                             <span data-tp-animate="" data-delay="0.1"
-                                class="opacity-0 font-display font-normal mb-3 text-[16px] text-black border border-[rgba(22,21,25,0.08)] rounded-[100px] inline-block py-1.5 px-4">Innovation
+                                class="opacity-0 font-normal mb-3 text-[16px] text-black border border-[rgba(22,21,25,0.08)] rounded-[100px] inline-block py-1.5 px-4">Innovation
                                 meets intent</span>
                             <h2 data-split="" data-delay="0.2"
                                 class="font-medium text-[80px] max-lg:text-6xl max-sm:text-4xl leading-[100%] tracking-[-0.02em] mb-18">
@@ -120,7 +120,7 @@
                         <div class="col-span-12">
                             <div class="text-center">
                                 <span data-tp-animate="" data-delay="0.3"
-                                    class="font-display font-normal mb-8 text-[16px] text-black border border-[rgba(22,21,25,0.08)] rounded-[100px] inline-block py-1.5 px-4">Know
+                                    class="font-normal mb-8 text-[16px] text-black border border-[rgba(22,21,25,0.08)] rounded-[100px] inline-block py-1.5 px-4">Know
                                     more about us</span>
                                 <h2 data-tp-animate="" data-delay="0.4"
                                     class="font-medium text-5xl max-lg:text-4xl max-sm:text-3xl max-lg:[&>br]:hidden leading-[117%] tracking-[-0.02em]">
@@ -153,7 +153,7 @@
                                     </svg>
                                 </span>
                                 <span
-                                    class="font-display group-hover:bg-primary group-hover:text-white group-hover:border-primary duration-300 font-normal mb-27 text-[16px] text-black border border-dashed border-[rgba(22,21,25,0.1)] rounded-[100px] inline-block py-1 px-4">Growth</span>
+                                    class="group-hover:bg-primary group-hover:text-white group-hover:border-primary duration-300 font-normal mb-27 text-[16px] text-black border border-dashed border-[rgba(22,21,25,0.1)] rounded-[100px] inline-block py-1 px-4">Growth</span>
                                 <h2 class="font-medium text-[55px] tracking-[-0.01em] mb-3"><span
                                         data-purecounter-duration="1" data-purecounter-end="95"
                                         class="purecounter">0</span>%</h2>
@@ -173,7 +173,7 @@
                                     </svg>
                                 </span>
                                 <span
-                                    class="font-display group-hover:bg-primary group-hover:text-white group-hover:border-primary duration-300 font-normal mb-27 text-[16px] text-black border border-dashed border-[rgba(22,21,25,0.1)] rounded-[100px] inline-block py-1 px-4">Experience</span>
+                                     class="group-hover:bg-primary group-hover:text-white group-hover:border-primary duration-300 font-normal mb-27 text-[16px] text-black border border-dashed border-[rgba(22,21,25,0.1)] rounded-[100px] inline-block py-1 px-4">Experience</span>
                                 <h2 class="font-medium text-[55px] tracking-[-0.01em] mb-3"><span
                                         data-purecounter-duration="1" data-purecounter-end="10"
                                         class="purecounter">0</span>+</h2>
@@ -193,7 +193,7 @@
                                     </svg>
                                 </span>
                                 <span
-                                    class="font-display group-hover:bg-primary group-hover:text-white group-hover:border-primary duration-300 font-normal mb-27 text-[16px] text-black border border-dashed border-[rgba(22,21,25,0.1)] rounded-[100px] inline-block py-1 px-4">Revenue</span>
+                                     class="group-hover:bg-primary group-hover:text-white group-hover:border-primary duration-300 font-normal mb-27 text-[16px] text-black border border-dashed border-[rgba(22,21,25,0.1)] rounded-[100px] inline-block py-1 px-4">Revenue</span>
                                 <h2 class="font-medium text-[55px] tracking-[-0.01em] mb-3">$<span
                                         data-purecounter-duration="1" data-purecounter-end="24"
                                         class="purecounter">0</span>m</h2>
@@ -205,7 +205,7 @@
                             <div data-tp-animate="" data-delay="0.5"
                                 class="bg-white rounded-[20px] group p-[30px_30px_25px_30px]">
                                 <span
-                                    class="font-display group-hover:bg-primary group-hover:text-white group-hover:border-primary duration-300 font-normal mb-27 text-[16px] text-black border border-dashed border-[rgba(22,21,25,0.1)] rounded-[100px] inline-block py-1 px-4">Users</span>
+                                     class="group-hover:bg-primary group-hover:text-white group-hover:border-primary duration-300 font-normal mb-27 text-[16px] text-black border border-dashed border-[rgba(22,21,25,0.1)] rounded-[100px] inline-block py-1 px-4">Users</span>
                                 <h2 class="font-medium text-[55px] tracking-[-0.01em] mb-3"><span
                                         data-purecounter-duration="1" data-purecounter-end="60"
                                         class="purecounter">0</span>k+</h2>
@@ -227,7 +227,7 @@
                     <div class="col-span-12">
                         <div class="text-center mb-[20px]">
                             <span data-tp-animate="" data-delay="0.2"
-                                class="font-display font-normal mb-5 text-[16px] text-white border border-[rgba(555,555,555,0.15)] rounded-[100px] inline-block py-1.5 px-4">Core
+                                    class="font-normal mb-5 text-[16px] text-white border border-[rgba(555,555,555,0.15)] rounded-[100px] inline-block py-1.5 px-4">Core
                                 values guide everything</span>
                             <h2 data-tp-animate="" data-delay="0.3"
                                 class="font-medium text-white text-5xl max-md:text-4xl leading-[117%] tracking-[-0.02em]">
