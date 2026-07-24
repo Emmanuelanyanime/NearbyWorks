@@ -21,7 +21,7 @@
             </div>
             <div class="grid grid-cols-12 gap-6">
                <div class="col-span-12">
-                  <img class="rounded-[20px]" src="images/thumb-1.jpg" alt="">
+                  <img class="rounded-[20px]" src="{{ asset('asset/images/thumb-1.jpg') }}" alt="">
                </div>
             </div>
          </div>
@@ -35,7 +35,7 @@
               <div class="col-span-12 lg:col-span-4 sm:col-span-6">
                  <div class="relative rounded-[12px] border border-[#080829]/[0.08] p-[60px] text-center shadow-[0_4px_24px_rgba(0,0,0,0.01)] transition-transform duration-300 hover:-translate-y-1">
                     <div class="text-center mb-[35px]">
-                     <img src="images/card-1.png" class="max-w-full max-h-full object-contain" alt="">
+                     <img src="{{ asset('asset/images/card-1.png') }}" class="max-w-full max-h-full object-contain" alt="">
                     </div>
                     <h3 class="text-[24px] font-semibold text-[#161519] mb-2">Colombia</h3>
                     <p class="text-[16px] text-[#77767A] tracking-[-0.08px] max-w-[232px] inline-block text-center">
@@ -49,7 +49,7 @@
                         <h3 class="text-[#6248FF] text-xs font-bold uppercase tracking-[1.2px]">Main Office</h3>
                      </div>
                     <div class="text-center mb-[35px]">
-                     <img src="images/card-2.png" class="max-w-full max-h-full object-contain" alt="">
+                     <img src="{{ asset('asset/images/card-2.png') }}" class="max-w-full max-h-full object-contain" alt="">
                     </div>
                     <h3 class="text-[24px] font-semibold text-[#161519] mb-2">France</h3>
                     <p class="text-[16px] text-[#77767A] tracking-[-0.08px] max-w-[232px] inline-block text-center">
@@ -60,7 +60,7 @@
               <div class="col-span-12 lg:col-span-4 sm:col-span-6">
                  <div class="relative rounded-[12px] border border-[#080829]/[0.08] p-[60px] text-center shadow-[0_4px_24px_rgba(0,0,0,0.01)] transition-transform duration-300 hover:-translate-y-1">
                     <div class="text-center mb-[35px]">
-                     <img src="images/card-3.png" class="max-w-full max-h-full object-contain" alt="Egypt Office">
+                     <img src="{{ asset('asset/images/card-3.png') }}" class="max-w-full max-h-full object-contain" alt="Egypt Office">
                     </div>
                     <h3 class="text-[24px] font-semibold text-[#161519] mb-2">Egypt</h3>
                     <p class="text-[16px] text-[#77767A] tracking-[-0.08px] max-w-[232px] inline-block text-center">
@@ -111,7 +111,7 @@
                         </a>
                      </div>
                      <div class="absolute -bottom-[30px] right-[70px] max-md:hidden">
-                        <img src="images/contact-shape.png" alt="">
+                        <img src="{{ asset('asset/images/contact-shape.png') }}" alt="">
                      </div>
                   </div>
                </div>
@@ -154,7 +154,7 @@
                </div>
                <div class="flex overflow-hidden rounded-full justify-between bg-[#F6F7FA] drop-shadow-[0_1px_6px_rgba(22,21,25,0.15)] px-[15px] flex-wrap">
                   <div class="flex items-center gap-[15px] px-12 py-8 max-xl:py-4">
-                     <img src="images/mail.svg" alt="" class="w-[57px] h-[40px]">
+                     <img src="{{ asset('asset/images/mail.svg') }}" alt="" class="w-[57px] h-[40px]">
                      <a href="mailto:contact@softuch.com">
                         <span class="text-[20px] font-normal text-[#161519]">contact@softuch.com</span>
                      </a>
@@ -163,7 +163,7 @@
                   <div class="w-px bg-[#fff] max-md:hidden"></div>
 
                   <div class="flex items-center gap-[15px] px-12 py-8 max-xl:py-4">
-                     <img src="images/call.svg" alt="" class="w-[57px] h-[40px]">
+                     <img src="{{ asset('asset/images/call.svg') }}" alt="" class="w-[57px] h-[40px]">
                      <a href="tel:0123456789">
                         <span class="text-[20px] font-normal text-[#161519]">+1-202-555-0144</span>
                      </a>
@@ -172,7 +172,7 @@
                   <div class="w-px bg-[#fff] max-md:hidden"></div>
 
                   <div class="flex items-center gap-[15px] px-12 py-8 max-xl:py-4">
-                     <img src="images/location.svg" alt="Location" class="w-[57px] h-[40px]">
+                     <img src="{{ asset('asset/images/location.svg') }}" alt="Location" class="w-[57px] h-[40px]">
                      <a href="#">
                         <span class="text-[20px] font-normal text-[#161519]">35Park Avenue, Uk</span>
                      </a>

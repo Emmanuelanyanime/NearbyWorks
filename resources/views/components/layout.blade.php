@@ -180,7 +180,7 @@
                                                
                                             </li>
                                             <li class="max-xl:relative has-dropdown group/menu">
-                                                <a href="#"
+                                                <a href="ContactUs"
                                                     class="relative font-medium text-[16px] xl:py-6.5 text-black group-hover/menu:text-primary max-xl:py-3.75 max-xl:border-b max-xl:border-[rgba(255,255,255,0.1)] xl:inline-block max-xl:block transition-colors duration-300">
                                                     Support
                                                 </a>
@@ -199,7 +199,7 @@
                                         <span class="text-black group-hover:text-white">Login</span>
                                         <b></b>
                                     </a>
-                                    <a href="Contact"
+                                    <a href="Register"
                                         class="tp-btn tp-btn-hover tp-btn-shadow hidden sm:inline-block rounded-lg text-[15px] px-5 h-[40px] leading-[40px]">
                                         <span>Sign up free</span>
                                         <b></b>
@@ -271,7 +271,7 @@
                                     <a class="hover:text-primary" href="#">FAQ’s</a></li>
                                 <li
                                     class="font-medium text-[16px] tracking-[-0.01em] text-[rgba(255,255,255,0.7)] mb-[17px]">
-                                    <a class="hover:text-primary" href="Contact">Contact Us</a></li>
+                                    <a class="hover:text-primary" href="ContactUs">ContactUs Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -316,7 +316,7 @@
                                     <a class="hover:text-primary" href="#">Privacy Policy</a></li>
                                 <li
                                     class="font-medium text-[16px] tracking-[-0.01em] text-[rgba(255,255,255,0.7)] mb-[17px]">
-                                    <a class="hover:text-primary" href="#">Support</a></li>
+                                    <a class="hover:text-primary" href="ContactUs">Support</a></li>
                                 <li
                                     class="font-medium text-[16px] tracking-[-0.01em] text-[rgba(255,255,255,0.7)] mb-[17px]">
                                     <a class="hover:text-primary" href="#">Legal</a></li>

@@ -12,8 +12,8 @@ Route::get('About', function () {
     return view('About');
 });
 
-Route::get('Contact', function () {
-    return view('Contact');
+Route::get('ContactUs', function () {
+    return view('ContactUs');
 });
 
 Route::get('/dashboard', function () {
