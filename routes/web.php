@@ -7,10 +7,14 @@ Route::get('/', function () {
     return view('Home');
 });
 
+
 Route::get('About', function () {
     return view('About');
 });
 
+Route::get('Contact', function () {
+    return view('Contact');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

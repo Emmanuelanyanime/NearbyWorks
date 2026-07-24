@@ -50,7 +50,7 @@
         data-lenis-prevent="">
         <div class="mb-10 flex items-center justify-between">
             <!-- logo -->
-            <a href="index.html"><img src="{{ asset('images/logo-black.png') }}" class="w-[100px] mx-auto"
+            <a href="/"><img src="{{ asset('images/logo-black.png') }}" class="w-[100px] mx-auto"
                     alt=""></a>
             <!-- Close Button -->
             <button
@@ -144,7 +144,7 @@
                 <div class="px-4 max-xl:px-0">
                     <div class="grid grid-cols-12 gap-6 items-center">
                         <div class="xxl:col-span-3 xl:col-span-2 col-span-6">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="{{ asset('asset/images/logo-black.png') }}" alt="Logo">
                             </a>
                         </div>
@@ -154,635 +154,18 @@
                                     <nav class="tp-mobile-menu-active">
                                         <ul class="xl:flex items-center xl:*:mx-5 xl:*:mx-4">
                                             <li class="relative has-dropdown group/menu">
-                                                <a href="index.html"
+                                                <a href="About"
                                                     class="relative  font-medium text-[16px] xl:py-6.5 text-black group-hover/menu:text-primary max-xl:py-3.75 max-xl:border-b max-xl:border-[rgba(255,255,255,0.1)] xl:inline-block max-xl:block transition-all duration-300">
-                                                    Company
+                                                    About Us
                                                 </a>
-                                                <div
-                                                    class="tp-submenu xl:absolute xl:top-full xl:left-0 xl:w-[500px] xl:p-[10px] xl:shadow-[0_2px_10px_0_rgba(22,21,25,0.1)] xl:bg-white xl:border xl:border-[rgba(22,21,25,0.1)] xl:rounded-[12px] xl:opacity-0 xl:invisible xl:scale-y-0 xl:origin-top xl:transition-all xl:duration-400 xl:group-hover/menu:opacity-100 xl:group-hover/menu:visible xl:group-hover/menu:scale-y-100 max-xl:hidden">
-                                                    <div class="xl:p-[10px_20px_36px_20px]">
-                                                        <div class="grid grid-cols-12 xl:gap-6">
-                                                            <div class="xl:col-span-6 col-span-12">
-                                                                <ul
-                                                                    class="[&_li]:max-xl:pl-5 xl:[&_li]:shadow-[0_1px_0_0_rgba(73,72,81,0.1)] [&_a]:block [&_a]:text-[16px] [&_a]:transition-all [&_a]:text-grey [&_a]:duration-300 [&_a]:hover:text-primary xl:[&_a]:hover:translate-x-[10px] [&_a]:py-[13px]">
-                                                                    <li><a href="route{{  }}">About Us</a></li>
-                                                                    <li><a href="career.html">Career</a></li>
-                                                                    <li><a href="career-details.html">Career
-                                                                            Details</a></li>
-                                                                    <li><a href="case-studies.html">Case Studies</a>
-                                                                    </li>
-                                                                    <li><a href="team.html">Our Team</a></li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="xl:col-span-6 col-span-12">
-                                                                <ul
-                                                                    class="[&_li]:max-xl:pl-5 xl:[&_li]:shadow-[0_1px_0_0_rgba(73,72,81,0.1)] [&_a]:block [&_a]:text-[16px] [&_a]:transition-all [&_a]:text-grey [&_a]:duration-300 [&_a]:hover:text-primary xl:[&_a]:hover:translate-x-[10px] [&_a]:py-[13px]">
-                                                                    <li><a href="service.html">Service</a></li>
-                                                                    <li><a href="testimonial.html">Testimonials</a>
-                                                                    </li>
-                                                                    <li><a href="customer.html">Customer</a></li>
-                                                                    <li><a href="customer-details.html">Customer
-                                                                            Details</a></li>
-                                                                    <li><a href="changelog.html">Changelog</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="max-xl:hidden p-[20px_30px_13px_22px] relative rounded-[8px] overflow-hidden bg-center bg-no-repeat bg-cover"
-                                                        data-background="assets/img/menu/bg.png">
-                                                        <img class="absolute top-0 right-0" src="images/thumb.png"
-                                                            alt="">
-                                                        <h2 class="font-medium text-[18px] text-black">Customer Love
-                                                        </h2>
-                                                        <p class="text-[15px]">Read what customers say about us</p>
-                                                    </div>
-                                                </div>
+                                              
                                             </li>
                                             <li class="max-xl:relative has-dropdown group/menu">
                                                 <a href="#"
                                                     class="relative font-medium text-[16px] xl:py-6.5 text-black group-hover/menu:text-primary max-xl:py-3.75 max-xl:border-b max-xl:border-[rgba(255,255,255,0.1)] xl:inline-block max-xl:block transition-colors duration-300">
                                                     Features
                                                 </a>
-                                                <div
-                                                    class="tp-submenu xl:absolute xl:top-full xl:left-0 xl:right-0 xl:p-[40px_10px_50px_10px] xl:shadow-[0_2px_10px_0_rgba(22,21,25,0.1)] xl:bg-white xl:border xl:border-[rgba(22,21,25,0.1)] xl:rounded-[12px] xl:opacity-0 xl:invisible xl:scale-y-0 xl:origin-top xl:transition-all xl:duration-400 xl:group-hover/menu:opacity-100 xl:group-hover/menu:visible xl:group-hover/menu:scale-y-100 max-xl:hidden">
-                                                    <div class="m-[0_auto] max-w-[1290px]">
-                                                        <div class="grid grid-cols-12 xl:gap-6">
-                                                            <div class="xl:col-span-7 col-span-12 xl:mr-[16px]">
-                                                                <div class="grid grid-cols-12 xl:gap-x-6">
-                                                                    <div class="col-span-12">
-                                                                        <span
-                                                                            class="font-medium text-[13px] uppercase text-grey-100 block mb-[10px]">Overview</span>
-                                                                    </div>
-                                                                    <div class="xl:col-span-6 col-span-12">
-                                                                        <div>
-                                                                            <ul
-                                                                                class="[&_li]:max-xl:pl-5 [&_a]:py-[15px]">
-                                                                                <li class="group">
-                                                                                    <a href="feature.html"
-                                                                                        class="flex items-start gap-[15px]">
-                                                                                        <span class="inline-block">
-                                                                                            <svg width="18"
-                                                                                                height="18"
-                                                                                                viewBox="0 0 18 18"
-                                                                                                fill="none"
-                                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                                <path
-                                                                                                    d="M15.3412 2.60485L10.0685 0.256436C9.29467 -0.0854786 8.12496 -0.0854786 7.35116 0.256436L2.07848 2.60485C0.746809 3.1987 0.548859 4.0085 0.548859 4.44039C0.548859 4.87228 0.746809 5.68208 2.07848 6.27593L7.35116 8.62434C7.73806 8.7953 8.22394 8.88528 8.70982 8.88528C9.1957 8.88528 9.68158 8.7953 10.0685 8.62434L15.3412 6.27593C16.6728 5.68208 16.8708 4.87228 16.8708 4.44039C16.8708 4.0085 16.6818 3.1987 15.3412 2.60485Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M8.70982 13.5371C8.36791 13.5371 8.02599 13.4651 7.71107 13.3301L1.64659 10.6308C0.71982 10.2169 0 9.11019 0 8.09345C0 7.72454 0.296926 7.42761 0.665834 7.42761C1.03474 7.42761 1.33167 7.72454 1.33167 8.09345C1.33167 8.57932 1.73657 9.20917 2.18645 9.40712L8.25094 12.1064C8.53887 12.2324 8.87178 12.2324 9.15971 12.1064L15.2242 9.40712C15.6741 9.20917 16.079 8.58832 16.079 8.09345C16.079 7.72454 16.3759 7.42761 16.7448 7.42761C17.1137 7.42761 17.4106 7.72454 17.4106 8.09345C17.4106 9.10119 16.6908 10.2169 15.7641 10.6308L9.69958 13.3301C9.39365 13.4651 9.05174 13.5371 8.70982 13.5371Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M8.70982 18C8.36791 18 8.02599 17.9281 7.71107 17.7931L1.64659 15.0938C0.647838 14.6529 0 13.6541 0 12.5564C0 12.1875 0.296926 11.8906 0.665834 11.8906C1.03474 11.8906 1.33167 12.1875 1.33167 12.5564C1.33167 13.1233 1.66458 13.6361 2.18645 13.8701L8.25094 16.5694C8.53887 16.6954 8.87178 16.6954 9.15971 16.5694L15.2242 13.8701C15.7371 13.6451 16.079 13.1233 16.079 12.5564C16.079 12.1875 16.3759 11.8906 16.7448 11.8906C17.1137 11.8906 17.4106 12.1875 17.4106 12.5564C17.4106 13.6541 16.7628 14.6439 15.7641 15.0938L9.69958 17.7931C9.39365 17.9281 9.05174 18 8.70982 18Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                            </svg>
-                                                                                        </span>
-                                                                                        <span class="inline-block">
-                                                                                            <span
-                                                                                                class="font-medium text-[16px] text-black leading-[90%]">Features
-                                                                                                <span
-                                                                                                    class="opacity-0 group-hover:opacity-100 duration-300">
-                                                                                                    <svg width="10"
-                                                                                                        height="10"
-                                                                                                        viewBox="0 0 10 10"
-                                                                                                        fill="none"
-                                                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                                                        <path
-                                                                                                            d="M0.75 8.75L8.75 0.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                        <path
-                                                                                                            d="M0.75 0.75H8.75V8.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                    </svg>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                class="block text-[15px] text-grey-100">See
-                                                                                                how others are using
-                                                                                                Toxci</span>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="group">
-                                                                                    <a href="analytics.html"
-                                                                                        class="flex items-start gap-[15px]">
-                                                                                        <span class="inline-block">
-                                                                                            <svg width="20"
-                                                                                                height="20"
-                                                                                                viewBox="0 0 20 20"
-                                                                                                fill="none"
-                                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M18.3721 0.697754V11.9536C18.3721 13.721 17.4419 14.6512 15.6744 14.6512H4.32557C2.55813 14.6512 1.6279 13.721 1.6279 11.9536V0.697754H18.3721Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M19.3023 1.39535H0.697674C0.316279 1.39535 0 1.07907 0 0.697674C0 0.316279 0.316279 0 0.697674 0H19.3023C19.6837 0 20 0.316279 20 0.697674C20 1.07907 19.6837 1.39535 19.3023 1.39535Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M14.3442 19.6186C14.2233 19.8604 13.9721 20 13.7209 20C13.6186 20 13.507 19.9721 13.414 19.9256L9.99998 18.2232L6.58602 19.9256C6.49299 19.9721 6.38138 20 6.27905 20C6.02789 20 5.77672 19.8604 5.65579 19.6186C5.47904 19.2651 5.6186 18.8465 5.97209 18.679L9.30231 17.0139V14.6511H10.6977V17.0139L14.0279 18.679C14.3814 18.8465 14.5209 19.2651 14.3442 19.6186Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M5.81393 9.76749C5.61858 9.76749 5.41395 9.68377 5.27441 9.51633C5.02325 9.21866 5.06974 8.78145 5.36741 8.53029L8.29767 6.08377C8.56743 5.86052 8.9116 5.76749 9.23718 5.82331C9.57207 5.87912 9.86045 6.08375 10.0372 6.38143L11.0139 8.00933L13.7395 5.73959C14.0372 5.48843 14.4744 5.53492 14.7255 5.83259C14.9767 6.13027 14.9302 6.56747 14.6325 6.81864L11.7023 9.26515C11.4325 9.48841 11.0884 9.58143 10.7628 9.52562C10.4279 9.4698 10.1395 9.26517 9.96276 8.9675L8.98603 7.33959L6.26046 9.60933C6.13022 9.71166 5.97207 9.76749 5.81393 9.76749Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                            </svg>
-                                                                                        </span>
-                                                                                        <span class="inline-block">
-                                                                                            <span
-                                                                                                class="font-medium text-[16px] text-black leading-[90%]">Analytics
-                                                                                                <span
-                                                                                                    class="opacity-0 group-hover:opacity-100 duration-300">
-                                                                                                    <svg width="10"
-                                                                                                        height="10"
-                                                                                                        viewBox="0 0 10 10"
-                                                                                                        fill="none"
-                                                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                                                        <path
-                                                                                                            d="M0.75 8.75L8.75 0.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                        <path
-                                                                                                            d="M0.75 0.75H8.75V8.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                    </svg>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                class="block text-[15px] text-grey-100">Dynamic
-                                                                                                content solutions</span>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="group">
-                                                                                    <a href="whitepapper.html"
-                                                                                        class="flex items-start gap-[15px]">
-                                                                                        <span class="inline-block">
-                                                                                            <svg width="15"
-                                                                                                height="22"
-                                                                                                viewBox="0 0 15 22"
-                                                                                                fill="none"
-                                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M11.8222 8.41116H3.1778C1.95474 8.41116 1.52978 7.59233 2.24496 6.59729L6.56716 0.54416C7.07504 -0.181387 7.92495 -0.181387 8.43284 0.54416L12.755 6.59729C13.4702 7.59233 13.0453 8.41116 11.8222 8.41116Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M13.294 16.641H1.70603C0.0683671 16.641 -0.491343 15.5526 0.472598 14.2259L4.6082 8.41119H10.3919L14.5275 14.2259C15.4914 15.5526 14.9317 16.641 13.294 16.641Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M8.27743 16.6409V20.7869C8.27743 21.2119 7.92502 21.5643 7.50006 21.5643C7.07509 21.5643 6.72269 21.2119 6.72269 20.7869V16.6409H8.27743Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                            </svg>
-                                                                                        </span>
-                                                                                        <span class="inline-block">
-                                                                                            <span
-                                                                                                class="font-medium text-[16px] text-black leading-[90%]">Whitepaper
-                                                                                                <span
-                                                                                                    class="opacity-0 group-hover:opacity-100 duration-300">
-                                                                                                    <svg width="10"
-                                                                                                        height="10"
-                                                                                                        viewBox="0 0 10 10"
-                                                                                                        fill="none"
-                                                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                                                        <path
-                                                                                                            d="M0.75 8.75L8.75 0.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                        <path
-                                                                                                            d="M0.75 0.75H8.75V8.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                    </svg>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                class="block text-[15px] text-grey-100">Store
-                                                                                                and manage data
-                                                                                                securely.</span>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="group">
-                                                                                    <a href="process.html"
-                                                                                        class="flex items-start gap-[15px]">
-                                                                                        <span class="inline-block">
-                                                                                            <svg width="18"
-                                                                                                height="18"
-                                                                                                viewBox="0 0 18 18"
-                                                                                                fill="none"
-                                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M18 13.05V15.75C18 17.1 17.1 18 15.75 18H3.59998C3.96898 18 4.34698 17.946 4.69798 17.829C4.79698 17.793 4.89596 17.757 4.99496 17.712C5.30996 17.586 5.61598 17.4061 5.88598 17.1721C5.96698 17.1091 6.05698 17.0281 6.13798 16.9471L6.17396 16.911L12.294 10.8H15.75C17.1 10.8 18 11.7 18 13.05Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path opacity="0.6"
-                                                                                                    d="M14.733 8.36108L12.294 10.8001L6.17398 16.9111C6.80398 16.2631 7.19999 15.3721 7.19999 14.4001V5.70607L9.63899 3.26707C10.593 2.31307 11.871 2.31307 12.825 3.26707L14.733 5.17508C15.687 6.12908 15.687 7.40708 14.733 8.36108Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M4.95 0H2.25C0.9 0 0 0.9 0 2.25V14.4C0 14.643 0.0269879 14.886 0.0719879 15.12C0.0989879 15.237 0.125993 15.354 0.161993 15.471C0.206993 15.606 0.251997 15.741 0.305997 15.867C0.314997 15.876 0.315005 15.885 0.315005 15.885C0.324005 15.885 0.324005 15.885 0.315005 15.894C0.441005 16.146 0.584997 16.389 0.755997 16.614C0.854997 16.731 0.954012 16.839 1.05301 16.947C1.15201 17.055 1.26 17.145 1.377 17.235L1.38601 17.244C1.61101 17.415 1.854 17.559 2.106 17.685C2.115 17.676 2.11501 17.676 2.11501 17.685C2.25001 17.748 2.385 17.793 2.529 17.838C2.646 17.874 2.76301 17.901 2.88001 17.928C3.11401 17.973 3.357 18 3.6 18C3.969 18 4.347 17.946 4.698 17.829C4.797 17.793 4.89599 17.757 4.99499 17.712C5.30999 17.586 5.61601 17.406 5.88601 17.172C5.96701 17.109 6.05701 17.028 6.13801 16.947L6.17399 16.911C6.80399 16.263 7.2 15.372 7.2 14.4V2.25C7.2 0.9 6.3 0 4.95 0ZM3.6 15.75C2.853 15.75 2.25 15.147 2.25 14.4C2.25 13.653 2.853 13.05 3.6 13.05C4.347 13.05 4.95 13.653 4.95 14.4C4.95 15.147 4.347 15.75 3.6 15.75Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                            </svg>
-                                                                                        </span>
-                                                                                        <span class="inline-block">
-                                                                                            <span
-                                                                                                class="font-medium text-[16px] text-black leading-[90%]">Process
-                                                                                                <span
-                                                                                                    class="opacity-0 group-hover:opacity-100 duration-300">
-                                                                                                    <svg width="10"
-                                                                                                        height="10"
-                                                                                                        viewBox="0 0 10 10"
-                                                                                                        fill="none"
-                                                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                                                        <path
-                                                                                                            d="M0.75 8.75L8.75 0.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                        <path
-                                                                                                            d="M0.75 0.75H8.75V8.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                    </svg>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                class="block text-[15px] text-grey-100">Our
-                                                                                                unique selling
-                                                                                                points</span>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="xl:col-span-6 col-span-12">
-                                                                        <div>
-                                                                            <ul
-                                                                                class="[&_li]:max-xl:pl-5 [&_a]:py-[15px]">
-                                                                                <li class="group">
-                                                                                    <a href="integrations.html"
-                                                                                        class="flex items-start gap-[15px]">
-                                                                                        <span class="inline-block">
-                                                                                            <svg width="18"
-                                                                                                height="18"
-                                                                                                viewBox="0 0 18 18"
-                                                                                                fill="none"
-                                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                                <path
-                                                                                                    d="M12.6 5.40002H5.40002V12.6H12.6V5.40002Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M2.7 18C4.185 18 5.4 16.785 5.4 15.3V12.6H2.7C1.215 12.6 0 13.815 0 15.3C0 16.785 1.215 18 2.7 18Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M2.7 5.4H5.4V2.7C5.4 1.215 4.185 0 2.7 0C1.215 0 0 1.215 0 2.7C0 4.185 1.215 5.4 2.7 5.4Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M12.6 5.4H15.3C16.785 5.4 18 4.185 18 2.7C18 1.215 16.785 0 15.3 0C13.815 0 12.6 1.215 12.6 2.7V5.4Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M15.3 18C16.785 18 18 16.785 18 15.3C18 13.815 16.785 12.6 15.3 12.6H12.6V15.3C12.6 16.785 13.815 18 15.3 18Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                            </svg>
-                                                                                        </span>
-                                                                                        <span class="inline-block">
-                                                                                            <span
-                                                                                                class="font-medium text-[16px] text-black leading-[90%]">Integrations
-                                                                                                <span
-                                                                                                    class="opacity-0 group-hover:opacity-100 duration-300">
-                                                                                                    <svg width="10"
-                                                                                                        height="10"
-                                                                                                        viewBox="0 0 10 10"
-                                                                                                        fill="none"
-                                                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                                                        <path
-                                                                                                            d="M0.75 8.75L8.75 0.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                        <path
-                                                                                                            d="M0.75 0.75H8.75V8.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                    </svg>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                class="block text-[15px] text-grey-100">Collaborate
-                                                                                                across tools</span>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="group">
-                                                                                    <a href="brandkit.html"
-                                                                                        class="flex items-start gap-[15px]">
-                                                                                        <span class="inline-block">
-                                                                                            <svg width="16"
-                                                                                                height="18"
-                                                                                                viewBox="0 0 16 18"
-                                                                                                fill="none"
-                                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M2.91711 15.927C3.65539 15.1347 4.78079 15.1977 5.42903 16.062L6.33838 17.2775C7.06766 18.2408 8.24709 18.2408 8.97637 17.2775L9.88572 16.062C10.534 15.1977 11.6594 15.1347 12.3977 15.927C14.0003 17.6376 15.3057 17.0704 15.3057 14.6755V4.53768C15.3057 0.909321 14.4594 0 11.0561 0H4.24959C0.846318 0 0 0.909321 0 4.53768V14.6755C0.00900337 17.0704 1.32351 17.6286 2.91711 15.927Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M10.2188 7.18465L9.76868 7.64383H9.75967L7.03165 10.3719C6.9146 10.4889 6.67151 10.615 6.50045 10.633L5.28499 10.813C4.84382 10.876 4.53773 10.5609 4.60075 10.1288L4.77182 8.9043C4.79883 8.73324 4.91585 8.49915 5.0329 8.3731L7.76993 5.64508L8.2201 5.1859C8.51721 4.88879 8.85034 4.67273 9.21048 4.67273C9.51659 4.67273 9.84971 4.81676 10.2188 5.1859C11.0292 5.9962 10.7681 6.63545 10.2188 7.18465Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                            </svg>
-                                                                                        </span>
-                                                                                        <span class="inline-block">
-                                                                                            <span
-                                                                                                class="font-medium text-[16px] text-black leading-[90%]">Brandkit
-                                                                                                <span
-                                                                                                    class="opacity-0 group-hover:opacity-100 duration-300">
-                                                                                                    <svg width="10"
-                                                                                                        height="10"
-                                                                                                        viewBox="0 0 10 10"
-                                                                                                        fill="none"
-                                                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                                                        <path
-                                                                                                            d="M0.75 8.75L8.75 0.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                        <path
-                                                                                                            d="M0.75 0.75H8.75V8.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                    </svg>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                class="block text-[15px] text-grey-100">Dynamic
-                                                                                                content solutions</span>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="group">
-                                                                                    <a href="downloads.html"
-                                                                                        class="flex items-start gap-[15px]">
-                                                                                        <span class="inline-block">
-                                                                                            <svg width="18"
-                                                                                                height="18"
-                                                                                                viewBox="0 0 18 18"
-                                                                                                fill="none"
-                                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M17.046 2.7V15.3C17.046 16.794 15.831 18 14.346 18H10.746C9.25196 18 8.04596 16.794 8.04596 15.3V2.7C8.04596 1.206 9.25196 0 10.746 0H14.346C15.831 0 17.046 1.206 17.046 2.7Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M13.221 3.59999C13.221 3.96899 12.915 4.27499 12.546 4.27499H8.04596V2.92499H12.546C12.915 2.92499 13.221 3.23099 13.221 3.59999Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M12.231 14.4C12.231 14.769 11.934 15.075 11.556 15.075H8.04596V13.725H11.556C11.934 13.725 12.231 14.031 12.231 14.4Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M13.221 10.809C13.212 11.178 12.915 11.475 12.546 11.475C12.537 11.475 12.537 11.475 12.537 11.475L8.04596 11.43V10.08L12.546 10.125C12.924 10.125 13.221 10.431 13.221 10.809Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M11.25 7.20002C11.25 7.56902 10.944 7.87502 10.575 7.87502H8.04596V6.52502H10.575C10.944 6.52502 11.25 6.83102 11.25 7.20002Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M5.31901 2.655V14.319C5.31901 14.724 5.14801 15.345 4.94101 15.687L4.20301 16.911C3.357 18.333 1.971 18.333 1.116 16.911L0.387001 15.687C0.171 15.345 0 14.724 0 14.319V2.655C0 1.197 1.197 0 2.664 0C4.12201 0 5.31901 1.197 5.31901 2.655Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M5.31901 3.82501H0V5.17501H5.31901V3.82501Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                            </svg>
-                                                                                        </span>
-                                                                                        <span class="inline-block">
-                                                                                            <span
-                                                                                                class="font-medium text-[16px] text-black leading-[90%]">Download
-                                                                                                App
-                                                                                                <span
-                                                                                                    class="opacity-0 group-hover:opacity-100 duration-300">
-                                                                                                    <svg width="10"
-                                                                                                        height="10"
-                                                                                                        viewBox="0 0 10 10"
-                                                                                                        fill="none"
-                                                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                                                        <path
-                                                                                                            d="M0.75 8.75L8.75 0.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                        <path
-                                                                                                            d="M0.75 0.75H8.75V8.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                    </svg>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                class="block text-[15px] text-grey-100">Get
-                                                                                                the app</span>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li class="group">
-                                                                                    <a href="analytics.html"
-                                                                                        class="flex items-start gap-[15px]">
-                                                                                        <span class="inline-block">
-                                                                                            <svg width="18"
-                                                                                                height="18"
-                                                                                                viewBox="0 0 18 18"
-                                                                                                fill="none"
-                                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M17.046 2.7V15.3C17.046 16.794 15.831 18 14.346 18H10.746C9.25196 18 8.04596 16.794 8.04596 15.3V2.7C8.04596 1.206 9.25196 0 10.746 0H14.346C15.831 0 17.046 1.206 17.046 2.7Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M13.221 3.59999C13.221 3.96899 12.915 4.27499 12.546 4.27499H8.04596V2.92499H12.546C12.915 2.92499 13.221 3.23099 13.221 3.59999Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M12.231 14.4C12.231 14.769 11.934 15.075 11.556 15.075H8.04596V13.725H11.556C11.934 13.725 12.231 14.031 12.231 14.4Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M13.221 10.809C13.212 11.178 12.915 11.475 12.546 11.475C12.537 11.475 12.537 11.475 12.537 11.475L8.04596 11.43V10.08L12.546 10.125C12.924 10.125 13.221 10.431 13.221 10.809Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M11.25 7.20002C11.25 7.56902 10.944 7.87502 10.575 7.87502H8.04596V6.52502H10.575C10.944 6.52502 11.25 6.83102 11.25 7.20002Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path opacity="0.4"
-                                                                                                    d="M5.31901 2.655V14.319C5.31901 14.724 5.14801 15.345 4.94101 15.687L4.20301 16.911C3.357 18.333 1.971 18.333 1.116 16.911L0.387001 15.687C0.171 15.345 0 14.724 0 14.319V2.655C0 1.197 1.197 0 2.664 0C4.12201 0 5.31901 1.197 5.31901 2.655Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                                <path
-                                                                                                    d="M5.31901 3.82501H0V5.17501H5.31901V3.82501Z"
-                                                                                                    fill="#77767A">
-                                                                                                </path>
-                                                                                            </svg>
-                                                                                        </span>
-                                                                                        <span class="inline-block">
-                                                                                            <span
-                                                                                                class="font-medium text-[16px] text-black leading-[90%]">Analytics
-                                                                                                & Reporting
-                                                                                                <span
-                                                                                                    class="opacity-0 group-hover:opacity-100 duration-300">
-                                                                                                    <svg width="10"
-                                                                                                        height="10"
-                                                                                                        viewBox="0 0 10 10"
-                                                                                                        fill="none"
-                                                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                                                        <path
-                                                                                                            d="M0.75 8.75L8.75 0.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                        <path
-                                                                                                            d="M0.75 0.75H8.75V8.75"
-                                                                                                            stroke="#161519"
-                                                                                                            stroke-width="1.5"
-                                                                                                            stroke-linecap="round"
-                                                                                                            stroke-linejoin="round">
-                                                                                                        </path>
-                                                                                                    </svg>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                class="block text-[15px] text-grey-100">Dynamic
-                                                                                                content solutions</span>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-span-5 max-xl:hidden">
-                                                                <div class="p-[38px_30px_34px_40px] ml-[-16px] mb-2.5 relative z-10 rounded-[8px] overflow-hidden bg-center bg-no-repeat bg-cover"
-                                                                    data-background="assets/img/menu/bg-5.png">
-                                                                    <h2
-                                                                        class="font-medium text-[18px] text-black mb-[7px]">
-                                                                        Merge Unified</h2>
-                                                                    <p class="mb-[14px]">One API. Countless product
-                                                                        integrations.</p>
-                                                                    <a href="pricing.html"
-                                                                        class="text-[16px] font-medium text-primary flex items-center gap-[6px]">
-                                                                        See a demo
-                                                                        <svg width="10" height="10"
-                                                                            viewBox="0 0 10 10" fill="none"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path d="M0.75 8.75L8.75 0.75"
-                                                                                stroke="currentColor"
-                                                                                stroke-width="1.5"
-                                                                                stroke-linecap="round"
-                                                                                stroke-linejoin="round"></path>
-                                                                            <path d="M0.75 0.75H8.75V8.75"
-                                                                                stroke="currentColor"
-                                                                                stroke-width="1.5"
-                                                                                stroke-linecap="round"
-                                                                                stroke-linejoin="round"></path>
-                                                                        </svg>
-                                                                    </a>
-                                                                    <img src="images/thumb-4_1.png" alt=""
-                                                                        class="absolute bottom-0 right-[8px] -z-10">
-                                                                </div>
-                                                                <div class="p-[38px_30px_34px_40px] ml-[-16px] relative z-10 rounded-[8px] overflow-hidden bg-center bg-no-repeat bg-cover"
-                                                                    data-background="assets/img/menu/bg-6.png">
-                                                                    <h2
-                                                                        class="font-medium text-[18px] text-black mb-[7px]">
-                                                                        Combine Unified</h2>
-                                                                    <p class="mb-[14px]">One API. Countless product
-                                                                        integrations.</p>
-                                                                    <a href="pricing.html"
-                                                                        class="text-[16px] font-medium text-primary flex items-center gap-[6px]">
-                                                                        See a demo
-                                                                        <svg width="10" height="10"
-                                                                            viewBox="0 0 10 10" fill="none"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path d="M0.75 8.75L8.75 0.75"
-                                                                                stroke="currentColor"
-                                                                                stroke-width="1.5"
-                                                                                stroke-linecap="round"
-                                                                                stroke-linejoin="round"></path>
-                                                                            <path d="M0.75 0.75H8.75V8.75"
-                                                                                stroke="currentColor"
-                                                                                stroke-width="1.5"
-                                                                                stroke-linecap="round"
-                                                                                stroke-linejoin="round"></path>
-                                                                        </svg>
-                                                                    </a>
-                                                                    <img src="images/thumb-5_1.png" alt=""
-                                                                        class="absolute bottom-0 right-0 -z-10">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                             </li>
                                             <li class="relative has-dropdown group/menu">
                                                 <a href="pricing.html"
@@ -794,78 +177,14 @@
                                                     class="relative font-medium text-[16px] xl:py-6.5 text-black group-hover/menu:text-primary max-xl:py-3.75 max-xl:border-b max-xl:border-[rgba(255,255,255,0.1)] xl:inline-block max-xl:block transition-colors duration-300">
                                                     Integrations
                                                 </a>
-                                                <div
-                                                    class="tp-submenu xl:w-[260px] xl:p-[17px_30px] xl:shadow-[0_2px_10px_0_rgba(22,21,25,0.1)] xl:bg-white xl:border xl:border-[rgba(22,21,25,0.1)] xl:rounded-[12px] xl:absolute xl:top-full xl:left-0 xl:opacity-0 xl:invisible xl:scale-y-0 xl:origin-top xl:transition-all xl:duration-400 xl:group-hover/menu:opacity-100 xl:group-hover/menu:visible xl:group-hover/menu:scale-y-100 max-xl:hidden">
-                                                    <ul
-                                                        class="[&_li]:max-xl:pl-5 xl:[&_li:not(:last-child)]:shadow-[0_1px_0_0_rgba(73,72,81,0.1)] [&_a]:block [&_a]:text-[16px] [&_a]:transition-all [&_a]:text-grey [&_a]:duration-300 [&_a]:hover:text-primary xl:[&_a]:hover:translate-x-[10px] [&_a]:py-[13px]">
-                                                        <li><a href="blog.html">Blog</a></li>
-                                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                                        <li><a href="faq.html">FAQs</a></li>
-                                                        <li><a href="legal.html">Legal</a></li>
-                                                        <li><a href="glossary.html">Glossary</a></li>
-                                                        <li><a href="glossary-details.html">Glossary Details</a></li>
-                                                        <li><a href="support.html">Support</a></li>
-                                                        <li><a href="contact.html">Contact us</a></li>
-                                                    </ul>
-                                                </div>
+                                               
                                             </li>
                                             <li class="max-xl:relative has-dropdown group/menu">
                                                 <a href="#"
                                                     class="relative font-medium text-[16px] xl:py-6.5 text-black group-hover/menu:text-primary max-xl:py-3.75 max-xl:border-b max-xl:border-[rgba(255,255,255,0.1)] xl:inline-block max-xl:block transition-colors duration-300">
                                                     Support
                                                 </a>
-                                                <div
-                                                    class="tp-submenu mx-auto xl:w-[750px] xl:p-[30px_30px_30px_30px] xl:shadow-[0_2px_10px_0_rgba(22,21,25,0.1)] xl:bg-white xl:border xl:border-[rgba(22,21,25,0.1)] xl:rounded-[12px] xl:absolute xl:top-full xl:left-0 xl:right-0 xl:opacity-0 xl:invisible xl:scale-y-0 xl:origin-top xl:transition-all xl:duration-400 xl:group-hover/menu:opacity-100 xl:group-hover/menu:visible xl:group-hover/menu:scale-y-100 max-xl:hidden">
-                                                    <div class="grid items-center grid-cols-12 xl:gap-10">
-                                                        <div
-                                                            class="xl:col-span-8 col-span-12 xl:mr-[16px] xl:mt-[-12px]">
-                                                            <div class="grid grid-cols-12 xl:gap-10">
-                                                                <div class="xl:col-span-6 col-span-12">
-                                                                    <ul
-                                                                        class="[&_li]:max-xl:pl-5 xl:[&_li]:shadow-[0_1px_0_0_rgba(73,72,81,0.1)] [&_a]:block [&_a]:text-[16px] [&_a]:transition-all [&_a]:text-grey [&_a]:duration-300 [&_a]:hover:text-primary xl:[&_a]:hover:translate-x-[10px] [&_a]:py-[12px]">
-                                                                        <li><a href="sign-in.html">Login</a></li>
-                                                                        <li><a href="affiliate.html">Affiliate
-                                                                                Program</a></li>
-                                                                        <li><a href="referall-program.html">Referral
-                                                                                Program</a></li>
-                                                                        <li><a href="terms-of-service.html">Terms &
-                                                                                Conditions</a></li>
-                                                                        <li><a href="privacy-policy.html">Privacy
-                                                                                Policy</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="xl:col-span-6 col-span-12">
-                                                                    <ul
-                                                                        class="[&_li]:max-xl:pl-5 xl:[&_li]:shadow-[0_1px_0_0_rgba(73,72,81,0.1)] [&_a]:block [&_a]:text-[16px] [&_a]:transition-all [&_a]:text-grey [&_a]:duration-300 [&_a]:hover:text-primary xl:[&_a]:hover:translate-x-[10px] [&_a]:py-[12px]">
-                                                                        <li><a href="analytics.html">Analytics</a></li>
-                                                                        <li><a href="register.html">Create Account</a>
-                                                                        </li>
-                                                                        <li><a href="affiliate-policy.html">Affiliate
-                                                                                Policy</a></li>
-                                                                        <li><a href="refund-policy.html">Refund
-                                                                                Policy</a></li>
-                                                                        <li><a href="support.html">Support</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-span-4 max-xl:hidden">
-                                                            <div class="ml-[-16px] bg-[#f2f8ff] relative rounded-[8px] overflow-hidden bg-center bg-no-repeat bg-cover"
-                                                                data-background="assets/img/menu/bg-4.png">
-                                                                <div class="p-[18px_20px_15px_20px]">
-                                                                    <h2
-                                                                        class="font-medium text-[18px] text-black mb-[10px]">
-                                                                        Customer Love</h2>
-                                                                    <p class="text-[15px] leading-[127%]">Read what
-                                                                        customers say about us</p>
-                                                                </div>
-                                                                <div class="text-right">
-                                                                    <img src="images/thumb-5_1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                               
                                             </li>
                                         </ul>
                                     </nav>
@@ -880,7 +199,7 @@
                                         <span class="text-black group-hover:text-white">Login</span>
                                         <b></b>
                                     </a>
-                                    <a href="contact.html"
+                                    <a href="Contact"
                                         class="tp-btn tp-btn-hover tp-btn-shadow hidden sm:inline-block rounded-lg text-[15px] px-5 h-[40px] leading-[40px]">
                                         <span>Sign up free</span>
                                         <b></b>
@@ -909,7 +228,7 @@
                 <div class="grid grid-cols-12 gap-[24px] pb-[84px]">
                     <div class="xl:col-span-5 lg:col-span-6 md:col-span-6 col-span-12">
                         <div data-tp-animate="" data-delay="0.2" class="mb-[30px]">
-                            <a href="index.html" class="mb-[25px] inline-block">
+                            <a href="/" class="mb-[25px] inline-block">
                                 <img src="{{ asset('asset/images/logo-white.png') }}" alt="">
                             </a>
                             <h2 class="font-medium text-xl tracking-[-0.01em] text-white mb-[8px]">Join our newsletter
@@ -937,7 +256,7 @@
                             <ul>
                                 <li
                                     class="font-medium text-[16px] tracking-[-0.01em] text-[rgba(255,255,255,0.7)] mb-[17px]">
-                                    <a class="hover:text-primary" href="#">About Us</a></li>
+                                    <a class="hover:text-primary" href="About">About Us</a></li>
                                 <li
                                     class="font-medium text-[16px] tracking-[-0.01em] text-[rgba(255,255,255,0.7)] mb-[17px]">
                                     <a class="hover:text-primary" href="#">Features</a></li>
@@ -952,7 +271,7 @@
                                     <a class="hover:text-primary" href="#">FAQ’s</a></li>
                                 <li
                                     class="font-medium text-[16px] tracking-[-0.01em] text-[rgba(255,255,255,0.7)] mb-[17px]">
-                                    <a class="hover:text-primary" href="#">Contact</a></li>
+                                    <a class="hover:text-primary" href="Contact">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
