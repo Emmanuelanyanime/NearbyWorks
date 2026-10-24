@@ -4,7 +4,7 @@
     // Guests always go through sign-up first. Signed-in people go to the employer's own apply link when the
     // job has one (Workable's application_url); the backend can replace that with an in-site application.
     $applyUrl = auth()->check()
-        ? ($job['apply_url'] ?? route('dashboard'))
+        ? ($job['apply_url'] ?? route('jobs.show', $job['id']))
         : route('register', ['job' => $job['id']]);
 @endphp
 
