@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Database\Factories\UserFactory;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,11 +20,19 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'firstName',
-        'lastName',
+        'firstname',
+        'lastname',
         'email',
         'password',
     ];
+
+    /**
+     * The full name, for code that still expects a single `name` attribute.
+     */
+    protected function name(): Attribute
+    {
+        return Attribute::get(fn () => trim($this->firstname.' '.$this->lastname));
+    }
 
     /**
      * The attributes that should be hidden for serialization.

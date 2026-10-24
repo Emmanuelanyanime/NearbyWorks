@@ -13,10 +13,17 @@
         @csrf
         @method('patch')
 
-        <div>
-            <x-input-label for="name" :value="__('Full name')" />
-            <x-text-input id="name" name="name" type="text" :value="old('name', $user->name ?: trim(($user->firstName ?? '') . ' ' . ($user->lastName ?? '')))" required autofocus autocomplete="name" />
-            <x-input-error id="name-error" :messages="$errors->get('name')" />
+        <div class="nw-form-row nw-form-row--fields">
+            <div>
+                <x-input-label for="firstname" :value="__('First name')" />
+                <x-text-input id="firstname" name="firstname" type="text" :value="old('firstname', $user->firstname)" required autofocus autocomplete="given-name" />
+                <x-input-error id="firstname-error" :messages="$errors->get('firstname')" />
+            </div>
+            <div>
+                <x-input-label for="lastname" :value="__('Last name')" />
+                <x-text-input id="lastname" name="lastname" type="text" :value="old('lastname', $user->lastname)" required autocomplete="family-name" />
+                <x-input-error id="lastname-error" :messages="$errors->get('lastname')" />
+            </div>
         </div>
 
         <div>

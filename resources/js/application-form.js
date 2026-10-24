@@ -8,12 +8,13 @@ const readableSize = (bytes) => (bytes >= 1048576 ? `${(bytes / 1048576).toFixed
 const errorKey = (name) => name.replace(/\[\]$/, '').replace(/\[([^\]]+)\]/g, '.$1');
 
 // Alpine reveals things (x-show) on the next animation frame, and a hidden element cannot take focus yet,
-// so wait until after the frame is drawn. The timeout is a fallback for background tabs, which draw no frames.
+// so wait until after that frame is drawn. A background tab draws no frames, so it just uses a short timer.
 const afterPaint = (callback) => {
-    let done = false;
-    const run = () => { if (!done) { done = true; callback(); } };
-    requestAnimationFrame(() => requestAnimationFrame(run));
-    setTimeout(run, 300);
+    if (document.visibilityState !== 'visible') {
+        setTimeout(callback, 50);
+        return;
+    }
+    requestAnimationFrame(() => requestAnimationFrame(callback));
 };
 
 export function registerApplicationForm(Alpine) {

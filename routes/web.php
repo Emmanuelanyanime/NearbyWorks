@@ -30,6 +30,13 @@ Route::get('jobs/{id}', function (string $id) {
 Route::get('jobs/{id}/apply', function (string $id) {
     return view('Apply', ['id' => $id]);
 })->middleware('auth')->name('jobs.apply');
+// TEMP-TEST-START (removed straight after testing)
+Route::post('jobs/{id}/apply', function (\Illuminate\Http\Request $request, string $id) {
+    $request->validate(['email' => ['required', 'email', 'not_in:taken@example.com']], ['email.not_in' => 'You have already applied for this role with this email.']);
+
+    return back()->with('applied', true);
+})->middleware('auth')->name('jobs.apply.store');
+// TEMP-TEST-END
 
 Route::get('/dashboard', function () {
     return view('dashboard');

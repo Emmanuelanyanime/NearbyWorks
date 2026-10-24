@@ -12,14 +12,14 @@
 
         <div class="nw-form-row nw-form-row--fields">
             <div>
-                <x-input-label for="firstName" :value="__('First name')" />
-                <x-text-input id="firstName" type="text" name="firstName" :value="old('firstName')" required autofocus autocomplete="given-name" />
-                <x-input-error id="firstName-error" :messages="$errors->get('firstName')" />
+                <x-input-label for="firstname" :value="__('First name')" />
+                <x-text-input id="firstname" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="given-name" />
+                <x-input-error id="firstname-error" :messages="$errors->get('firstname')" />
             </div>
             <div>
-                <x-input-label for="lastName" :value="__('Last name')" />
-                <x-text-input id="lastName" type="text" name="lastName" :value="old('lastName')" required autocomplete="family-name" />
-                <x-input-error id="lastName-error" :messages="$errors->get('lastName')" />
+                <x-input-label for="lastname" :value="__('Last name')" />
+                <x-text-input id="lastname" type="text" name="lastname" :value="old('lastname')" required autocomplete="family-name" />
+                <x-input-error id="lastname-error" :messages="$errors->get('lastname')" />
             </div>
         </div>
 
