@@ -1,31 +1,31 @@
 <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
-    </div>
+    <x-slot name="title">{{ __('Verify your email') }}</x-slot>
+
+    <header class="nw-auth-heading">
+        <span class="nw-eyebrow">{{ __('You are almost there') }}</span>
+        <h1 id="auth-heading">{{ __('Check your inbox.') }}</h1>
+        <p>{{ __('Thanks for joining NearbyWorks. Click the link in your verification email to confirm your address.') }}
+        </p>
+    </header>
 
     @if (session('status') == 'verification-link-sent')
-        <div class="mb-4 font-medium text-sm text-green-600">
+        <div class="nw-notice" role="status">
             {{ __('A new verification link has been sent to the email address you provided during registration.') }}
         </div>
     @endif
 
-    <div class="mt-4 flex items-center justify-between">
+    <div class="nw-form-stack">
+        <p class="nw-form-hint">{{ __('Cannot find the email? Check your spam folder or request another link below.') }}
+        </p>
+
         <form method="POST" action="{{ route('verification.send') }}">
             @csrf
-
-            <div>
-                <x-primary-button>
-                    {{ __('Resend Verification Email') }}
-                </x-primary-button>
-            </div>
+            <x-primary-button>{{ __('Resend verification email') }}</x-primary-button>
         </form>
 
-        <form method="POST" action="{{ route('logout') }}">
+        <form method="POST" action="{{ route('logout') }}" class="nw-form-footer">
             @csrf
-
-            <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                {{ __('Log Out') }}
-            </button>
+            <button type="submit" class="nw-link">{{ __('Log out') }}</button>
         </form>
     </div>
 </x-guest-layout>

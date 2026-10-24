@@ -1,27 +1,25 @@
 <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
-    </div>
+    <x-slot name="title">{{ __('Confirm your password') }}</x-slot>
 
-    <form method="POST" action="{{ route('password.confirm') }}">
+    <header class="nw-auth-heading">
+        <span class="nw-eyebrow">{{ __('One quick check') }}</span>
+        <h1 id="auth-heading">{{ __('Confirm it is you.') }}</h1>
+        <p>{{ __('This is a secure area of NearbyWorks. Confirm your password to continue.') }}</p>
+    </header>
+
+    <form method="POST" action="{{ route('password.confirm') }}" class="nw-form-stack">
         @csrf
 
-        <!-- Password -->
         <div>
             <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <x-text-input id="password" type="password" name="password" required autofocus autocomplete="current-password" />
+            <x-input-error id="password-error" :messages="$errors->get('password')" />
         </div>
 
-        <div class="flex justify-end mt-4">
-            <x-primary-button>
-                {{ __('Confirm') }}
-            </x-primary-button>
-        </div>
+        <x-primary-button>{{ __('Confirm password') }} <span aria-hidden="true">&rarr;</span></x-primary-button>
     </form>
+
+    <p class="nw-form-footer">
+        <a class="nw-link" href="{{ route('dashboard') }}">{{ __('Back to your account') }}</a>
+    </p>
 </x-guest-layout>

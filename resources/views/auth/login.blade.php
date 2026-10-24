@@ -1,47 +1,44 @@
 <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-slot name="title">{{ __('Log in') }}</x-slot>
 
-    <form method="POST" action="{{ route('login') }}">
+    <header class="nw-auth-heading">
+        <span class="nw-eyebrow">{{ __('Welcome back') }}</span>
+        <h1 id="auth-heading">{{ __('Your next chapter awaits.') }}</h1>
+        <p>{{ __('Log in to your NearbyWorks account.') }}</p>
+    </header>
+
+    <x-auth-session-status :status="session('status')" />
+
+    <form method="POST" action="{{ route('login') }}" class="nw-form-stack">
         @csrf
 
-        <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-label for="email" :value="__('Email address')" />
+            <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-input-error id="email-error" :messages="$errors->get('email')" />
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
+        <div>
             <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <x-text-input id="password" type="password" name="password" required autocomplete="current-password" />
+            <x-input-error id="password-error" :messages="$errors->get('password')" />
         </div>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+        <div class="nw-form-row">
+            <label for="remember_me" class="nw-checkbox-label">
+                <input id="remember_me" class="nw-checkbox" type="checkbox" name="remember" @checked(old('remember'))>
+                <span>{{ __('Remember me') }}</span>
             </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
+                <a class="nw-link" href="{{ route('password.request') }}">{{ __('Forgot password?') }}</a>
             @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
         </div>
+
+        <x-primary-button>{{ __('Log in') }} <span aria-hidden="true">&rarr;</span></x-primary-button>
     </form>
+
+    <p class="nw-form-footer">
+        {{ __('New to NearbyWorks?') }}
+        <a class="nw-link" href="{{ route('register') }}">{{ __('Create an account') }}</a>
+    </p>
 </x-guest-layout>

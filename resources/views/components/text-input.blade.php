@@ -1,3 +1,14 @@
-@props(['disabled' => false])
+@props(['disabled' => false, 'errorBag' => 'default'])
 
-<input @disabled($disabled) {{ $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm']) }}>
+@php
+    $fieldName = $attributes->get('name');
+    $fieldId = $attributes->get('id');
+    $hasError = $fieldName && $errors->getBag($errorBag)->has($fieldName);
+    $describedBy = $attributes->get('aria-describedby');
+
+    if ($hasError && $fieldId) {
+        $describedBy = trim($describedBy . ' ' . $fieldId . '-error');
+    }
+@endphp
+
+<input @disabled($disabled) {{ $attributes->except('aria-describedby')->merge(['class' => 'nw-input', 'aria-invalid' => $hasError ? 'true' : null, 'aria-describedby' => $describedBy ?: null]) }}>

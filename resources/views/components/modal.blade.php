@@ -17,35 +17,51 @@ $maxWidth = [
 <div
     x-data="{
         show: @js($show),
+        focusOnOpen: @js($attributes->has('focusable')),
+        previouslyFocused: null,
         focusables() {
-            // All focusable element types...
-            let selector = 'a, button, input:not([type=\'hidden\']), textarea, select, details, [tabindex]:not([tabindex=\'-1\'])'
-            return [...$el.querySelectorAll(selector)]
-                // All non-disabled elements...
-                .filter(el => ! el.hasAttribute('disabled'))
+            let selector = 'a, button, input:not([type=\'hidden\']), textarea, select, details, [tabindex]:not([tabindex=\'-1\'])';
+            return [...$el.querySelectorAll(selector)].filter(el => ! el.hasAttribute('disabled'));
         },
         firstFocusable() { return this.focusables()[0] },
         lastFocusable() { return this.focusables().slice(-1)[0] },
-        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
-        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
-        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
-        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
-    }"
-    x-init="$watch('show', value => {
-        if (value) {
+        nextFocusable() {
+            let index = this.focusables().indexOf(document.activeElement);
+            return this.focusables()[index + 1] || this.firstFocusable();
+        },
+        prevFocusable() {
+            let index = this.focusables().indexOf(document.activeElement);
+            return this.focusables()[index - 1] || this.lastFocusable();
+        },
+        activate() {
+            this.previouslyFocused = document.activeElement;
             document.body.classList.add('overflow-y-hidden');
-            {{ $attributes->has('focusable') ? 'setTimeout(() => firstFocusable().focus(), 100)' : '' }}
-        } else {
+            if (this.focusOnOpen) {
+                this.$nextTick(() => this.firstFocusable()?.focus());
+            }
+        },
+        deactivate() {
             document.body.classList.remove('overflow-y-hidden');
-        }
-    })"
+            const trigger = this.previouslyFocused;
+            this.previouslyFocused = null;
+            this.$nextTick(() => trigger?.focus());
+        },
+    }"
+    x-init="
+        if (show) activate();
+        $watch('show', value => value ? activate() : deactivate());
+    "
     x-on:open-modal.window="$event.detail == '{{ $name }}' ? show = true : null"
     x-on:close-modal.window="$event.detail == '{{ $name }}' ? show = false : null"
     x-on:close.stop="show = false"
-    x-on:keydown.escape.window="show = false"
-    x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
-    x-on:keydown.shift.tab.prevent="prevFocusable().focus()"
+    x-on:keydown.escape.window="if (show) show = false"
+    x-on:keydown.tab="if (show) { $event.preventDefault(); ($event.shiftKey ? prevFocusable() : nextFocusable())?.focus(); }"
     x-show="show"
+    x-bind:aria-hidden="(! show).toString()"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="{{ $name }}-title"
+    aria-describedby="{{ $name }}-description"
     class="fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50"
     style="display: {{ $show ? 'block' : 'none' }};"
 >

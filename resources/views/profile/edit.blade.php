@@ -1,28 +1,32 @@
 <x-app-layout>
+    <x-slot name="title">{{ __('Profile & settings') }}</x-slot>
+
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
+        <span class="nw-eyebrow">{{ __('Your account, your way') }}</span>
+        <h1>{{ __('Profile & settings') }}</h1>
+        <p>{{ __('Keep your details current and your account secure.') }}</p>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
-            </div>
+    <div class="nw-account-grid">
+        <aside class="nw-account-sidebar" aria-label="{{ __('Settings sections') }}">
+            <span class="nw-eyebrow">{{ __('On this page') }}</span>
+            <nav class="nw-settings-nav">
+                <a href="#profile-information">{{ __('Personal details') }}</a>
+                <a href="#password">{{ __('Password') }}</a>
+                <a href="#delete-account">{{ __('Delete account') }}</a>
+            </nav>
+            <p class="nw-form-hint">{{ __('Need a hand?') }} <a class="nw-link" href="{{ url('/ContactUs') }}">{{ __('Get in touch') }}</a></p>
+        </aside>
 
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
+        <div class="nw-settings-panels">
+            <div id="profile-information" class="nw-panel">
+                @include('profile.partials.update-profile-information-form')
             </div>
-
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
+            <div id="password" class="nw-panel">
+                @include('profile.partials.update-password-form')
+            </div>
+            <div id="delete-account" class="nw-panel nw-panel--danger">
+                @include('profile.partials.delete-user-form')
             </div>
         </div>
     </div>
