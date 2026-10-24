@@ -7,6 +7,15 @@ const readableSize = (bytes) => (bytes >= 1048576 ? `${(bytes / 1048576).toFixed
 // Laravel reports errors as "answers.q-why"; the form names them "answers[q-why]".
 const errorKey = (name) => name.replace(/\[\]$/, '').replace(/\[([^\]]+)\]/g, '.$1');
 
+// Alpine reveals things (x-show) on the next animation frame, and a hidden element cannot take focus yet,
+// so wait until after the frame is drawn. The timeout is a fallback for background tabs, which draw no frames.
+const afterPaint = (callback) => {
+    let done = false;
+    const run = () => { if (!done) { done = true; callback(); } };
+    requestAnimationFrame(() => requestAnimationFrame(run));
+    setTimeout(run, 300);
+};
+
 export function registerApplicationForm(Alpine) {
     Alpine.data('applicationForm', ({ preview = true, errors = {} } = {}) => ({
         preview,
@@ -17,8 +26,7 @@ export function registerApplicationForm(Alpine) {
         submitting: false,
         done: false,
         init() {
-            // One plain listener on the form instead of an x-on:input / x-on:change on every field: with Alpine 3.15,
-            // per-field handlers made the screen repaint one change late after real typing.
+            // One listener on the form, instead of an x-on:input / x-on:change on every field.
             this.$refs.form.addEventListener('input', (event) => this.touched(event));
             this.$refs.form.addEventListener('change', (event) => this.touched(event));
 
@@ -85,13 +93,19 @@ export function registerApplicationForm(Alpine) {
         submit(event) {
             if (!this.validate()) {
                 event.preventDefault();
-                this.$nextTick(() => this.$refs.summary?.focus());
+                afterPaint(() => {
+                    this.$refs.summary?.focus();
+                    this.$refs.summary?.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+                });
                 return;
             }
             if (this.preview) {
                 event.preventDefault();
                 this.done = true;
-                this.$nextTick(() => this.$refs.success?.focus());
+                afterPaint(() => {
+                    this.$refs.success?.focus();
+                    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+                });
                 return;
             }
             this.submitting = true; // a real submit: the server takes it from here
