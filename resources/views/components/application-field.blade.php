@@ -24,7 +24,7 @@
     $htmlType = ['email' => 'email', 'tel' => 'tel', 'numeric' => 'number', 'date' => 'date'][$type] ?? 'text';
 @endphp
 
-<div class="nw-field" data-field="{{ $name }}" data-type="{{ $type }}" data-label="{{ $field['label'] }}" @if ($required) data-required @endif @if ($type === 'file') data-accept="{{ implode(',', $field['accept'] ?? []) }}" data-max="{{ $field['max_file_size'] ?? '' }}" @endif @if ($maxLength && in_array($type, ['textarea', 'free_text'], true)) x-data="{ length: {{ mb_strlen((string) $value) }} }" @endif>
+<div class="nw-field" data-field="{{ $name }}" data-type="{{ $type }}" data-label="{{ $field['label'] }}" @if ($required) data-required @endif @if ($type === 'file') data-accept="{{ implode(',', $field['accept'] ?? []) }}" data-max="{{ $field['max_file_size'] ?? '' }}" @endif>
     @if ($isGroup)
         <fieldset class="nw-fieldset" aria-describedby="{{ $describedBy }}">
             <legend class="nw-label">
@@ -37,14 +37,14 @@
                 @if ($type === 'boolean')
                     @foreach ([['1', __('Yes')], ['0', __('No')]] as [$optionValue, $optionLabel])
                         <label class="nw-choice">
-                            <input type="radio" name="{{ $inputName }}" value="{{ $optionValue }}" @checked((string) $value === $optionValue) x-on:change="clear(@js($name))">
+                            <input type="radio" name="{{ $inputName }}" value="{{ $optionValue }}" @checked((string) $value === $optionValue)>
                             <span>{{ $optionLabel }}</span>
                         </label>
                     @endforeach
                 @else
                     @foreach ($choices as $choice)
                         <label class="nw-choice">
-                            <input type="{{ $single ? 'radio' : 'checkbox' }}" name="{{ $inputName }}" value="{{ $choice['id'] }}" @checked(in_array($choice['id'], (array) $value, true)) x-on:change="clear(@js($name))">
+                            <input type="{{ $single ? 'radio' : 'checkbox' }}" name="{{ $inputName }}" value="{{ $choice['id'] }}" @checked(in_array($choice['id'], (array) $value, true))>
                             <span>{{ $choice['body'] }}</span>
                         </label>
                     @endforeach
@@ -59,12 +59,12 @@
         @if ($hint)<p class="nw-hint" id="{{ $id }}-hint">{{ $hint }}</p>@endif
 
         @if (in_array($type, $textual, true))
-            <input class="nw-input" id="{{ $id }}" type="{{ $htmlType }}" name="{{ $inputName }}" value="{{ $value }}" @if (! empty($field['autocomplete'])) autocomplete="{{ $field['autocomplete'] }}" @endif @if ($maxLength) maxlength="{{ $maxLength }}" @endif @if ($type === 'numeric') step="any" inputmode="decimal" min="0" @endif aria-describedby="{{ $describedBy }}" x-bind:aria-invalid="error(@js($name)) ? 'true' : 'false'" x-on:input="clear(@js($name))">
+            <input class="nw-input" id="{{ $id }}" type="{{ $htmlType }}" name="{{ $inputName }}" value="{{ $value }}" @if (! empty($field['autocomplete'])) autocomplete="{{ $field['autocomplete'] }}" @endif @if ($maxLength) maxlength="{{ $maxLength }}" @endif @if ($type === 'numeric') step="any" inputmode="decimal" min="0" @endif aria-describedby="{{ $describedBy }}" x-bind:aria-invalid="error(@js($name)) ? 'true' : 'false'">
         @elseif (in_array($type, ['textarea', 'free_text'], true))
-            <textarea class="nw-input nw-textarea" id="{{ $id }}" name="{{ $inputName }}" rows="{{ $type === 'free_text' ? 4 : 6 }}" @if ($maxLength) maxlength="{{ $maxLength }}" @endif aria-describedby="{{ $describedBy }}" x-bind:aria-invalid="error(@js($name)) ? 'true' : 'false'" x-on:input="clear(@js($name)); @if ($maxLength) length = $event.target.value.length @endif">{{ $value }}</textarea>
-            @if ($maxLength)<p class="nw-counter" aria-hidden="true"><span x-text="length">{{ mb_strlen((string) $value) }}</span> / {{ number_format($maxLength) }}</p>@endif
+            <textarea class="nw-input nw-textarea" id="{{ $id }}" name="{{ $inputName }}" rows="{{ $type === 'free_text' ? 4 : 6 }}" @if ($maxLength) maxlength="{{ $maxLength }}" @endif aria-describedby="{{ $describedBy }}" x-bind:aria-invalid="error(@js($name)) ? 'true' : 'false'">{{ $value }}</textarea>
+            @if ($maxLength)<p class="nw-counter" aria-hidden="true"><span data-count>{{ mb_strlen((string) $value) }}</span> / {{ number_format($maxLength) }}</p>@endif
         @elseif ($type === 'dropdown')
-            <select class="nw-input" id="{{ $id }}" name="{{ $inputName }}" aria-describedby="{{ $describedBy }}" x-bind:aria-invalid="error(@js($name)) ? 'true' : 'false'" x-on:change="clear(@js($name))">
+            <select class="nw-input" id="{{ $id }}" name="{{ $inputName }}" aria-describedby="{{ $describedBy }}" x-bind:aria-invalid="error(@js($name)) ? 'true' : 'false'">
                 <option value="">{{ __('Choose an option') }}</option>
                 @foreach ($choices as $choice)
                     <option value="{{ $choice['id'] }}" @selected((string) $value === (string) $choice['id'])>{{ $choice['body'] }}</option>
@@ -72,7 +72,7 @@
             </select>
         @elseif ($type === 'file')
             <label class="nw-dropzone" for="{{ $id }}" x-bind:class="{ 'is-over': over === @js($name), 'has-file': files[@js($name)] }" x-on:dragover.prevent="over = @js($name)" x-on:dragleave.prevent="over = null" x-on:drop.prevent="drop($event, @js($name))">
-                <input class="nw-sr-only" id="{{ $id }}" type="file" name="{{ $inputName }}" @if ($accept) accept="{{ $accept }}" @endif aria-describedby="{{ $describedBy }}" x-bind:aria-invalid="error(@js($name)) ? 'true' : 'false'" x-on:change="pick($event)">
+                <input class="nw-sr-only" id="{{ $id }}" type="file" name="{{ $inputName }}" @if ($accept) accept="{{ $accept }}" @endif aria-describedby="{{ $describedBy }}" x-bind:aria-invalid="error(@js($name)) ? 'true' : 'false'">
                 <x-icon name="file" />
                 <span class="nw-dropzone__text"><strong>{{ __('Choose a file') }}</strong> {{ __('or drag it here') }}</span>
             </label>

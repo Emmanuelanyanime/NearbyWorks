@@ -103,7 +103,7 @@
                             <div class="nw-form-section nw-form-section--confirm">
                                 <div class="nw-field" data-field="confirm" data-type="boolean" data-label="{{ __('Confirmation') }}" data-required data-required-message="{{ __('Please tick this box to send your application.') }}">
                                     <label class="nw-choice nw-choice--check">
-                                        <input type="checkbox" name="confirm" value="1" @checked(old('confirm')) aria-describedby="field-confirm-error" x-on:change="clear('confirm')">
+                                        <input type="checkbox" name="confirm" value="1" @checked(old('confirm')) aria-describedby="field-confirm-error">
                                         <span>{{ __('I confirm these details are correct, and I’m happy for NearbyWorks to share them with :company for this application.', ['company' => $company]) }}</span>
                                     </label>
                                     <p class="nw-field__error" id="field-confirm-error" role="alert" x-show="error('confirm')" x-text="error('confirm')" x-cloak></p>

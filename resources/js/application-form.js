@@ -17,6 +17,11 @@ export function registerApplicationForm(Alpine) {
         submitting: false,
         done: false,
         init() {
+            // One plain listener on the form instead of an x-on:input / x-on:change on every field: with Alpine 3.15,
+            // per-field handlers made the screen repaint one change late after real typing.
+            this.$refs.form.addEventListener('input', (event) => this.touched(event));
+            this.$refs.form.addEventListener('change', (event) => this.touched(event));
+
             // Errors sent back by the server (keyed "answers.q-why") become messages on the matching fields.
             this.$nextTick(() => {
                 this.$refs.form?.querySelectorAll('[data-field]').forEach((field) => {
@@ -25,6 +30,20 @@ export function registerApplicationForm(Alpine) {
                 });
                 this.summary = this.listErrors();
             });
+        },
+        // Someone typed in, chose or ticked something: forget its error, and keep the character counter honest.
+        touched(event) {
+            const field = event.target.closest?.('[data-field]');
+            if (!field) return;
+
+            if (event.target.type === 'file') {
+                if (event.type === 'change') this.pick(event);
+                return;
+            }
+
+            this.clear(field.dataset.field);
+            const counter = field.querySelector('[data-count]');
+            if (counter && typeof event.target.value === 'string') counter.textContent = event.target.value.length;
         },
         error(name) { return this.errors[name] ?? ''; },
         clear(name) {
