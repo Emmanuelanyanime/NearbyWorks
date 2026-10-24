@@ -1,17 +1,14 @@
 @php
     // Real jobs: pass them in from the route/controller as $jobs. Until then, sample listings are shown.
-    $jobs = collect($jobs ?? require resource_path('data/sample-jobs.php'))
-        ->sortByDesc(fn ($job) => strtotime($job['posted_at']))
-        ->values();
+    $catalog = \App\Support\JobCatalog::make($jobs ?? null);
+    $jobs = $catalog->jobs;
     $job = $jobs->firstWhere('id', $id) ?? abort(404);
-    $categorySlug = \Illuminate\Support\Str::slug($job['field']);
-    $posted = \Illuminate\Support\Carbon::parse($job['posted_at'])->diffForHumans();
-    $similar = $jobs->where('field', $job['field'])->where('id', '!=', $job['id'])->take(3);
-    if ($similar->count() < 3) {
-        $similar = $similar->concat(
-            $jobs->where('id', '!=', $job['id'])->whereNotIn('id', $similar->pluck('id'))->take(3 - $similar->count())
-        );
-    }
+    $company = $job['company'] ?? 'NearbyWorks';
+    $categorySlug = ! empty($job['field']) ? \Illuminate\Support\Str::slug($job['field']) : null;
+    $posted = ! empty($job['posted_at']) ? \Illuminate\Support\Carbon::parse($job['posted_at'])->diffForHumans() : null;
+    $similar = $jobs->where('id', '!=', $job['id']);
+    $sameField = empty($job['field']) ? collect() : $similar->where('field', $job['field'])->take(3);
+    $similar = $sameField->concat($similar->whereNotIn('id', $sameField->pluck('id'))->take(3 - $sameField->count()))->values();
     $sections = [
         'responsibilities' => 'What you’ll do',
         'requirements' => 'What we’re looking for',
@@ -19,41 +16,57 @@
     ];
 @endphp
 
-<x-layout :title="$job['title'].' at '.$job['company']" :description="$job['summary']">
+<x-layout :title="$job['title'].(! empty($job['company']) ? ' at '.$job['company'] : '')" :description="$job['summary'] ?? 'Find out more about this role and sign up to apply on NearbyWorks.'">
     <article class="nw-job-detail" aria-labelledby="job-title">
         <div class="nw-container">
             <nav class="nw-breadcrumb" aria-label="Breadcrumb">
                 <a href="{{ route('jobs.index') }}"><x-icon name="arrow-left" /> All jobs</a>
-                <span aria-hidden="true">/</span>
-                <a href="{{ route('jobs.index', ['category' => $categorySlug]) }}">{{ $job['field'] }}</a>
+                @if ($categorySlug)
+                    <span aria-hidden="true">/</span>
+                    <a href="{{ route('jobs.index', ['category' => $categorySlug]) }}">{{ $job['field'] }}</a>
+                @endif
             </nav>
 
             <header class="nw-job-detail__header">
-                <x-company-mark :company="$job['company']" size="lg" />
+                <x-company-mark :company="$company" size="lg" />
                 <div>
-                    <p class="nw-job-detail__company">{{ $job['company'] }}</p>
+                    <p class="nw-job-detail__company">{{ $company }}</p>
                     <h1 id="job-title">{{ $job['title'] }}</h1>
                     <ul class="nw-job-detail__meta">
-                        <li><x-icon name="map-pin" /> {{ $job['location'] }}</li>
-                        <li><x-icon name="briefcase" /> {{ $job['type'] }}</li>
-                        <li><x-icon name="globe" /> {{ $job['workplace'] }}</li>
+                        @if (! empty($job['location']))
+                            <li><x-icon name="map-pin" /> {{ $job['location'] }}</li>
+                        @endif
+                        @if (! empty($job['type']))
+                            <li><x-icon name="briefcase" /> {{ $job['type'] }}</li>
+                        @endif
+                        @if (! empty($job['workplace']))
+                            <li><x-icon name="globe" /> {{ $job['workplace'] }}</li>
+                        @endif
                         @if (! empty($job['salary']))
                             <li><x-icon name="wallet" /> {{ $job['salary'] }}</li>
                         @endif
-                        <li><x-icon name="clock" /> Posted {{ $posted }}</li>
+                        @if ($posted)
+                            <li><x-icon name="clock" /> Posted {{ $posted }}</li>
+                        @endif
                     </ul>
                 </div>
             </header>
 
             <div class="nw-job-detail__grid">
                 <div class="nw-job-detail__body">
-                    <section aria-labelledby="about-role">
-                        <h2 id="about-role">About the role</h2>
-                        <p class="nw-copy">{{ $job['summary'] }}</p>
-                        @if (! empty($job['description']))
-                            <p class="nw-copy">{{ $job['description'] }}</p>
-                        @endif
-                    </section>
+                    @if (! empty($job['summary']) || ! empty($job['description']))
+                        <section aria-labelledby="about-role">
+                            <h2 id="about-role">About the role</h2>
+                            @if (! empty($job['summary']))
+                                <p class="nw-copy">{{ $job['summary'] }}</p>
+                            @endif
+                            @if (! empty($job['description']))
+                                @foreach (preg_split('/\R{2,}/', trim($job['description'])) as $paragraph)
+                                    <p class="nw-copy">{{ $paragraph }}</p>
+                                @endforeach
+                            @endif
+                        </section>
+                    @endif
 
                     @foreach ($sections as $key => $heading)
                         @if (! empty($job[$key]))
@@ -81,9 +94,9 @@
 
                     @if (! empty($job['company_about']))
                         <section class="nw-company-about" aria-labelledby="section-company">
-                            <x-company-mark :company="$job['company']" />
+                            <x-company-mark :company="$company" />
                             <div>
-                                <h2 id="section-company">About {{ $job['company'] }}</h2>
+                                <h2 id="section-company">About {{ $company }}</h2>
                                 <p class="nw-copy">{{ $job['company_about'] }}</p>
                             </div>
                         </section>
@@ -96,7 +109,9 @@
                     @if (! empty($job['salary']))
                         <p class="nw-apply-card__salary">{{ $job['salary'] }}</p>
                     @endif
-                    <p class="nw-apply-card__type">{{ $job['type'] }}, {{ $job['workplace'] }}</p>
+                    @if (! empty($job['type']) || ! empty($job['workplace']))
+                        <p class="nw-apply-card__type">{{ collect([$job['type'] ?? null, $job['workplace'] ?? null])->filter()->implode(', ') }}</p>
+                    @endif
                     <x-apply-button :job="$job" class="nw-apply-card__button" />
                     @guest
                         <p class="nw-form-hint">Applying needs a free NearbyWorks account. Sign up takes a minute.</p>

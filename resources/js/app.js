@@ -1,4 +1,5 @@
 import './bootstrap';
+import './hero-map';
 
 import Alpine from 'alpinejs';
 
