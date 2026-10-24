@@ -1,10 +1,9 @@
 @props(['job'])
 
 @php
-    // Guests always go through sign-up first. Signed-in people go to the employer's own apply link when the
-    // job has one (Workable's application_url); the backend can replace that with an in-site application.
+    // Guests always go through sign-up first; signed-in people fill in the application form on this site.
     $applyUrl = auth()->check()
-        ? ($job['apply_url'] ?? route('jobs.show', $job['id']))
+        ? route('jobs.apply', $job['id'])
         : route('register', ['job' => $job['id']]);
 @endphp
 

@@ -10,8 +10,9 @@
  *   type (Full-time|Part-time|Contract), salary (string|null), posted_at (any date string),
  *   field (must match a name in job-categories.php), tags (string[]), summary,
  *   description (string), responsibilities, requirements, benefits (string[], all optional),
- *   company_about (string, optional), apply_url (optional - where signed-in people go to apply;
- *   guests always go to the register page first)
+ *   company_about (string, optional), apply_url (optional - the employer's own application page, e.g. Workable's
+ *   application_url; offered as an alternative on the application form. Applying itself happens on this site:
+ *   guests go to the register page first, signed-in people to the application form)
  *
  * Only id and title are required. Every other key can be left out and the pages simply skip it.
  */

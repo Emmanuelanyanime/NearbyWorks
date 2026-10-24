@@ -3,9 +3,11 @@ import './hero-map';
 
 import Alpine from 'alpinejs';
 import { registerDashboardCharts } from './dashboard-charts';
+import { registerApplicationForm } from './application-form';
 
 window.Alpine = Alpine;
 registerDashboardCharts(Alpine);
+registerApplicationForm(Alpine);
 
 const scrollToElement = (element) => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
