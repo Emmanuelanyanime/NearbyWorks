@@ -1,34 +1,129 @@
-<x-layout title="Good people. Great possibilities.">
-    <section class="nw-hero" aria-labelledby="home-heading">
-        <div class="nw-container nw-hero__grid">
-            <div class="nw-hero__copy">
-                <span class="nw-eyebrow">A better way to come together</span>
-                <h1 id="home-heading">Good people.<br><em>Great possibilities.</em></h1>
-                <p class="nw-copy">Sourcing and job postings, in one place. NearbyWorks brings employers and job seekers together to make the next connection count.</p>
-                <div class="nw-button-row">
-                    <a href="{{ route('register') }}" class="nw-button nw-button--primary">Find your next hire <x-icon name="arrow-up-right" /></a>
-                    <a href="{{ route('register') }}" class="nw-button nw-button--outline">Find your next role <x-icon name="arrow-up-right" /></a>
+@php
+    // Real jobs: pass them in from the route/controller as $jobs. Until then, sample listings are shown.
+    $jobs = collect($jobs ?? require resource_path('data/sample-jobs.php'))
+        ->sortByDesc(fn ($job) => strtotime($job['posted_at']))
+        ->values();
+    $categories = collect($categories ?? require resource_path('data/job-categories.php'));
+    $categoryCounts = $jobs->countBy('field');
+    $jobIndex = $jobs->map(fn ($job) => ['workplace' => $job['workplace'], 'type' => $job['type']])->all();
+@endphp
+
+<x-layout title="Good people. Great possibilities." description="Search open roles, sign up and apply. NearbyWorks brings employers and job seekers together to make the next connection count.">
+    <div x-data="jobBoard(@js($jobIndex), 6)">
+        <section class="nw-hero" aria-labelledby="home-heading">
+            <div class="nw-container nw-hero__grid">
+                <div class="nw-hero__copy">
+                    <span class="nw-eyebrow">A better way to come together</span>
+                    <h1 id="home-heading">Good people.<br><em>Great possibilities.</em></h1>
+                    <p class="nw-copy">Search open roles, apply with your own profile, or find your next hire. NearbyWorks brings employers and job seekers together to make the next connection count.</p>
+                    <a href="{{ route('register') }}" class="nw-link">Hiring? Start your hiring journey <x-icon name="arrow-right" /></a>
+                    <div class="nw-hero__footnote"><x-icon name="users" /> For the people hiring. And the people ready for what’s next.</div>
                 </div>
-                <div class="nw-hero__footnote"><x-icon name="users" /> For the people hiring. And the people ready for what’s next.</div>
+                <div class="nw-hero__visual">
+                    <img class="nw-hero__image" src="{{ asset('asset/nearbyworks/professional.png') }}" width="495" height="621" fetchpriority="high" alt="Two colleagues sharing a conversation in a welcoming workplace">
+                    <x-icon name="spark" class="nw-hero__spark" />
+                    <div class="nw-connection-note">
+                        <span class="nw-connection-note__icon"><x-icon name="check" /></span>
+                        <div><strong>It starts with a connection.</strong><small>A person. A possibility. A new beginning.</small></div>
+                    </div>
+                </div>
+
+                <div class="nw-hero__search">
+                    <form class="nw-search" role="search" aria-label="Search jobs" method="get" action="{{ route('jobs.index') }}">
+                        <label class="nw-search__field">
+                            <x-icon name="search" />
+                            <span class="nw-search__text">
+                                <span class="nw-search__label">What</span>
+                                <input class="nw-search__input" type="search" name="q" placeholder="Job title, skill or company" autocomplete="off">
+                            </span>
+                        </label>
+                        <label class="nw-search__field">
+                            <x-icon name="map-pin" />
+                            <span class="nw-search__text">
+                                <span class="nw-search__label">Where</span>
+                                <input class="nw-search__input" type="search" name="place" placeholder="City, country or remote" autocomplete="off">
+                            </span>
+                        </label>
+                        <button class="nw-button nw-button--primary nw-search__submit" type="submit">Search jobs <x-icon name="arrow-right" /></button>
+                    </form>
+                    <div class="nw-popular" role="group" aria-label="Popular categories">
+                        <span>Popular categories</span>
+                        @foreach ($categories->take(5) as $category)
+                            <a class="nw-chip" href="{{ route('jobs.index', ['category' => \Illuminate\Support\Str::slug($category['name'])]) }}">{{ $category['name'] }}</a>
+                        @endforeach
+                    </div>
+                </div>
             </div>
-            <div class="nw-hero__visual">
-                <img class="nw-hero__image" src="{{ asset('asset/nearbyworks/professional.png') }}" width="495" height="621" fetchpriority="high" alt="Two colleagues sharing a conversation in a welcoming workplace">
-                <x-icon name="spark" class="nw-hero__spark" />
-                <div class="nw-connection-note">
-                    <span class="nw-connection-note__icon"><x-icon name="check" /></span>
-                    <div><strong>It starts with a connection.</strong><small>A person. A possibility. A new beginning.</small></div>
+        </section>
+
+        <div class="nw-intro-strip">
+            <div class="nw-container nw-intro-strip__inner">
+                <span><x-icon name="briefcase" /> Opportunities worth exploring</span>
+                <span><x-icon name="users" /> People worth getting to know</span>
+                <span><x-icon name="globe" /> One place to connect</span>
+            </div>
+        </div>
+
+        <section id="jobs" class="nw-section" aria-labelledby="jobs-heading">
+            <div class="nw-container">
+                <div class="nw-section-heading">
+                    <div><span class="nw-eyebrow">Latest jobs</span><h2 id="jobs-heading" class="nw-heading">Fresh roles,<br><em>ready when you are.</em></h2></div>
+                    <p>Look around as long as you like. When something fits, create a free account and apply in a few steps.</p>
                 </div>
+
+                <div class="nw-jobs__bar">
+                    <div class="nw-jobs__filters" role="group" aria-label="Filter jobs">
+                        <button type="button" class="nw-chip" x-bind:aria-pressed="(filter === 'all').toString()" x-on:click="filter = 'all'">All roles</button>
+                        <button type="button" class="nw-chip" x-bind:aria-pressed="(filter === 'remote').toString()" x-on:click="filter = 'remote'">Remote</button>
+                        <button type="button" class="nw-chip" x-bind:aria-pressed="(filter === 'Full-time').toString()" x-on:click="filter = 'Full-time'">Full-time</button>
+                        <button type="button" class="nw-chip" x-bind:aria-pressed="(filter === 'Part-time').toString()" x-on:click="filter = 'Part-time'">Part-time</button>
+                        <button type="button" class="nw-chip" x-bind:aria-pressed="(filter === 'Contract').toString()" x-on:click="filter = 'Contract'">Contract</button>
+                    </div>
+                    <p class="nw-jobs__count" role="status" aria-live="polite" x-text="summary">Showing {{ min(6, $jobs->count()) }} of {{ $jobs->count() }} roles</p>
+                </div>
+
+                <div class="nw-job-grid">
+                    @foreach ($jobs as $job)
+                        <x-job-card :job="$job" :x-show="'isShown('.$loop->index.')'" :x-cloak="$loop->index >= 6" />
+                    @endforeach
+                </div>
+
+                <div class="nw-jobs__empty" x-show="matches.length === 0" x-cloak>
+                    <h3>No roles in that group yet.</h3>
+                    <p>Try another filter, or browse every open role.</p>
+                    <div class="nw-button-row nw-button-row--center">
+                        <button type="button" class="nw-button nw-button--outline" x-on:click="filter = 'all'">Show all roles</button>
+                    </div>
+                </div>
+
+                <div class="nw-jobs__more">
+                    <a href="{{ route('jobs.index') }}" class="nw-button nw-button--outline">View all {{ $jobs->count() }} jobs <x-icon name="arrow-right" /></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="categories" class="nw-section nw-section--soft" aria-labelledby="categories-heading">
+        <div class="nw-container">
+            <div class="nw-section-heading">
+                <div><span class="nw-eyebrow">Browse by category</span><h2 id="categories-heading" class="nw-heading">Find work in the<br>field <em>you love.</em></h2></div>
+                <p>Pick a field to see every open role in it, from first jobs to leadership.</p>
+            </div>
+            <div class="nw-category-grid">
+                @foreach ($categories as $category)
+                    @php($count = $categoryCounts->get($category['name'], 0))
+                    <a class="nw-category" href="{{ route('jobs.index', ['category' => \Illuminate\Support\Str::slug($category['name'])]) }}">
+                        <span class="nw-category__icon"><x-icon :name="$category['icon']" /></span>
+                        <span class="nw-category__text">
+                            <strong>{{ $category['name'] }}</strong>
+                            <small>{{ $category['blurb'] }}</small>
+                        </span>
+                        <span class="nw-category__count">{{ $count }} {{ \Illuminate\Support\Str::plural('role', $count) }}</span>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>
-
-    <div class="nw-intro-strip">
-        <div class="nw-container nw-intro-strip__inner">
-            <span><x-icon name="briefcase" /> Opportunities worth exploring</span>
-            <span><x-icon name="users" /> People worth getting to know</span>
-            <span><x-icon name="globe" /> One place to connect</span>
-        </div>
-    </div>
 
     <section id="for-you" class="nw-section" aria-labelledby="audience-heading"
         x-data="{ audience: window.location.hash === '#for-job-seekers' ? 'job-seekers' : 'employers', select(value, focus = false) { this.audience = value; if (focus) this.$nextTick(() => this.$refs[value === 'employers' ? 'employersTab' : 'jobseekersTab'].focus()); } }"
@@ -77,9 +172,9 @@
         <div class="nw-container">
             <div class="nw-section-heading"><div><span class="nw-eyebrow">A thoughtful place to start</span><h2 id="how-heading" class="nw-heading">Less distance.<br><em>More possibility.</em></h2></div><p>A simple starting point for people with something to offer, and teams with something to build.</p></div>
             <div class="nw-feature-grid">
-                <article class="nw-feature"><span class="nw-feature__number">01</span><h3>Start with you.</h3><p>Create your NearbyWorks account. One place to begin, whether you’re hiring or looking for your next role.</p></article>
-                <article class="nw-feature"><span class="nw-feature__number">02</span><h3>Make it personal.</h3><p>Keep your name and contact details current, so your account reflects the person behind the next connection.</p></article>
-                <article class="nw-feature"><span class="nw-feature__number">03</span><h3>Look ahead.</h3><p>Get to know a platform built around sourcing, job postings, and bringing the two sides of hiring together.</p></article>
+                <article class="nw-feature"><span class="nw-feature__number">01</span><h3>Find a role.</h3><p>Browse open roles and narrow them by type or place. You don’t need an account to look around.</p></article>
+                <article class="nw-feature"><span class="nw-feature__number">02</span><h3>Create your account.</h3><p>Found one you like? Sign up in a minute, so your details travel with every application you send.</p></article>
+                <article class="nw-feature"><span class="nw-feature__number">03</span><h3>Apply as yourself.</h3><p>Keep your name and contact details current, so each application comes from the person behind it.</p></article>
             </div>
         </div>
     </section>

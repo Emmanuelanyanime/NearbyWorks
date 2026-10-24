@@ -16,6 +16,15 @@ Route::get('ContactUs', function () {
     return view('ContactUs');
 });
 
+// Jobs pages read sample listings until the backend passes real jobs to these views.
+Route::get('jobs', function () {
+    return view('Jobs');
+})->name('jobs.index');
+
+Route::get('jobs/{id}', function (string $id) {
+    return view('JobDetail', ['id' => $id]);
+})->name('jobs.show');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
